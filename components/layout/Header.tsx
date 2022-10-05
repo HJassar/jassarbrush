@@ -20,7 +20,9 @@ const linkProps = {
 
 const pages: any[] = [
   <LinkRouter key="0" sx={linkProps} underline="none" to="/#about">
-    <Button color="inherit">About</Button>
+    <Button sx={{ "&hover:": { color: "#ffa500" } }} color="inherit">
+      About
+    </Button>
   </LinkRouter>,
   <FineArt key="fa" />,
   <LinkRouter

@@ -94,7 +94,11 @@ export default function Gallery({ category }: { category: string }) {
               }}
             >
               <img
-                src={image.thumbnails.large.url}
+                src={
+                  image.featured
+                    ? image.thumbnails.full.url
+                    : image.thumbnails.large.url
+                }
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
