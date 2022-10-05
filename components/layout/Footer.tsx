@@ -78,7 +78,7 @@ export default function Footer() {
               to="https://www.instagram.com/jassar_brush/"
               rel="noreferrer"
             >
-              Instagram's
+              Instagram&apos;s
             </LinkRouter>{" "}
             direct messaging.
           </Box>

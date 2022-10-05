@@ -19,11 +19,12 @@ const linkProps = {
 };
 
 const pages: any[] = [
-  <LinkRouter sx={linkProps} underline="none" to="/#about">
+  <LinkRouter key="0" sx={linkProps} underline="none" to="/#about">
     <Button color="inherit">About</Button>
   </LinkRouter>,
-  <FineArt />,
+  <FineArt key="fa" />,
   <LinkRouter
+    key="1"
     sx={linkProps}
     underline="none"
     to="/gallery?category=illustrations"
@@ -31,6 +32,7 @@ const pages: any[] = [
     <Button color="inherit">Illustrations</Button>
   </LinkRouter>,
   <LinkRouter
+    key="2"
     sx={linkProps}
     underline="none"
     to="/gallery?category=caricatures"
@@ -38,6 +40,7 @@ const pages: any[] = [
     <Button color="inherit">Caricatures</Button>
   </LinkRouter>,
   <LinkRouter
+    key="3"
     sx={linkProps}
     target="_blank"
     rel="noopener"
@@ -46,7 +49,7 @@ const pages: any[] = [
   >
     <Button color="inherit">Shop</Button>
   </LinkRouter>,
-  <LinkRouter sx={linkProps} underline="none" to="/#contact">
+  <LinkRouter key="4" sx={linkProps} underline="none" to="/#contact">
     <Button color="inherit">Contact</Button>
   </LinkRouter>,
 ];
@@ -117,7 +120,7 @@ export default function Header() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem>{page}</MenuItem>
+                  <MenuItem key={page}>{page}</MenuItem>
                 ))}
               </Menu>
             </Box>
@@ -147,7 +150,9 @@ export default function Header() {
               }}
             >
               {pages.map((page) => (
-                <Box ml={1}>{page}</Box>
+                <Box key={page} ml={1}>
+                  {page}
+                </Box>
               ))}
             </Box>
           </Toolbar>
@@ -201,6 +206,7 @@ function FineArt() {
       >
         {items.map((item: IItem, index: number) => (
           <LinkRouter
+            key={index}
             color="inherit"
             underline="none"
             to={"/gallery?category=" + item.slug}

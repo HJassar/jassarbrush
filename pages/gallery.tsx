@@ -4,8 +4,9 @@ import useParams from "../hooks/useParams";
 import Layout from "../components/layout/Layout";
 import Gallery from "../components/Gallery";
 import { Box } from "@mui/material";
+import Image from "next/image";
 
-export default function gallery() {
+export default function GalleryPage() {
   const category = useParams("category");
   if (!category) return <Layout loading />;
   if (typeof category === "string")
@@ -18,7 +19,7 @@ export default function gallery() {
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <img
+            <Image
               src={`/assets/categories/${category}.png`}
               alt={category}
               style={{ width: "auto" }}
@@ -28,4 +29,5 @@ export default function gallery() {
         </Container>
       </Layout>
     );
+  return null;
 }

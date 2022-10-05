@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import type { NextPage } from "next";
+import Image from "next/image";
 
 import { useInView } from "react-intersection-observer";
 
@@ -38,7 +39,7 @@ const Home: NextPage = () => {
         position: "relative",
       }}
     >
-      <img
+      <Image
         src={bg}
         alt="background"
         style={{
@@ -52,7 +53,7 @@ const Home: NextPage = () => {
         }}
       />
       <Container maxWidth="md">
-        <img src={signature} alt="AJ Signature" />
+        <Image src={signature} alt="AJ Signature" />
       </Container>
     </Box>
   );
@@ -86,11 +87,11 @@ const Home: NextPage = () => {
   const sections = [
     firstSection,
     secondSection,
-    <About />,
-    <Exhibs />,
-    <Memberships />,
-    <Awards />,
-    <Publications />,
+    <About key="About" />,
+    <Exhibs key="Exhibs" />,
+    <Memberships key="Memberships" />,
+    <Awards key="Awards" />,
+    <Publications key="Publications" />,
   ];
 
   return (
@@ -139,7 +140,7 @@ function About() {
               display={{ xs: "none", md: "flex" }}
               justifyContent="center"
             >
-              <img
+              <Image
                 style={{
                   width: "100%",
                   height: "100%",

@@ -15,6 +15,7 @@ import {
   NavigateNext as NextIcon,
   NavigateBefore as PrevIcon,
 } from "@mui/icons-material";
+import Image from "next/image";
 
 function srcset(
   image: string,
@@ -92,7 +93,7 @@ export default function Gallery({ category }: { category: string }) {
                 setOpenImage(index);
               }}
             >
-              <img
+              <Image
                 src={image.thumbnails.large.url}
                 style={{
                   objectFit: "cover",
@@ -171,7 +172,8 @@ function ImageDialog({
           </IconButton>
         </Box>
         <Box>
-          <img
+          <Image
+            alt={images[openImage]?.title || "Image"}
             src={images[openImage].url}
             style={{
               maxHeight: "100%",
