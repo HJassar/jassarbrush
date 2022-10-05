@@ -93,7 +93,7 @@ export default function Gallery({ category }: { category: string }) {
                 setOpenImage(index);
               }}
             >
-              <Image
+              <img
                 src={image.thumbnails.large.url}
                 style={{
                   objectFit: "cover",
@@ -101,7 +101,6 @@ export default function Gallery({ category }: { category: string }) {
                   height: rows * 300,
                 }}
                 alt={image.title}
-                loading="lazy"
               />
               {image.title && (
                 <ImageListItemBar
@@ -172,7 +171,7 @@ function ImageDialog({
           </IconButton>
         </Box>
         <Box>
-          <Image
+          <img
             alt={images[openImage]?.title || "Image"}
             src={images[openImage].url}
             style={{
@@ -180,6 +179,8 @@ function ImageDialog({
               maxWidth: "100%",
               objectFit: "contain",
               objectPosition: "center",
+              height: "auto",
+              width: "100%",
             }}
           />
         </Box>

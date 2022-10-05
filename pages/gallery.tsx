@@ -19,10 +19,13 @@ export default function GalleryPage() {
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Image
+            <img
               src={`/assets/categories/${category}.png`}
               alt={category}
-              style={{ width: "auto" }}
+              style={{
+                width: "auto",
+                height: "auto",
+              }}
             />
           </Box>
           <Gallery category={category} />

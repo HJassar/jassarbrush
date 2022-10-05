@@ -37,24 +37,12 @@ const Home: NextPage = () => {
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
+        background: `url(${bg})`,
       }}
     >
-      <Image
-        src={bg}
-        alt="background"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: -1,
-        }}
-      />
-      <Container maxWidth="md">
-        <Image src={signature} alt="AJ Signature" />
-      </Container>
+      <div style={{ width: "60%" }}>
+        <img src={signature} alt="AJ Signature" />
+      </div>
     </Box>
   );
 
@@ -140,12 +128,12 @@ function About() {
               display={{ xs: "none", md: "flex" }}
               justifyContent="center"
             >
-              <Image
+              <img
                 style={{
-                  width: "100%",
-                  height: "100%",
                   objectFit: "cover",
                   borderRadius: 15,
+                  width: "100%",
+                  height: "100%",
                 }}
                 src={me}
                 alt="About Me"
