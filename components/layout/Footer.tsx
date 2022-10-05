@@ -47,9 +47,6 @@ export default function Footer() {
             variant="filled"
             multiline
             rows={4}
-            sx={{
-              mb: 2,
-            }}
           />
           <Button color="primary" fullWidth variant="contained">
             Submit

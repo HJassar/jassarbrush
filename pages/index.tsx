@@ -38,9 +38,10 @@ const Home: NextPage = () => {
         alignItems: "center",
         position: "relative",
         background: `url(${bg})`,
+        backgroundSize: "cover",
       }}
     >
-      <div style={{ width: "60%" }}>
+      <div style={{ width: "60%", maxWidth: "849px" }}>
         <img src={signature} alt="AJ Signature" />
       </div>
     </Box>
