@@ -1,16 +1,12 @@
 import { useEffect, useState, useContext } from "react";
 import { LBContext } from "../LBContext";
 
-import { Gallery, Image } from "react-grid-gallery";
+import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 
 import useData from "../hooks/useData";
-import processAirtableRecords from "../lib/processATRecs";
-
-export interface CustomImage extends Image {
-  original: string;
-}
+import processAirtableRecords, { CustomImage } from "../lib/processATRecs";
 
 export default function ImageGallery({ category }: { category: string }) {
   const [images, setImages] = useState<CustomImage[]>([]);
@@ -56,7 +52,28 @@ export default function ImageGallery({ category }: { category: string }) {
   return (
     <div>
       <Gallery
-        images={images}
+        images={images.map((image) => ({
+          ...image,
+          customOverlay: (
+            <div
+              style={{
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                maxHeight: "240px",
+                overflow: "hidden",
+                whiteSpace: "break-spaces",
+                textOverflow: "ellipsis",
+                position: "absolute",
+                bottom: 0,
+                width: "100%",
+                color: "white",
+                padding: "15px",
+                fontSize: "90%",
+              }}
+            >
+              <div>{image.caption}</div>
+            </div>
+          ),
+        }))}
         onClick={handleClick}
         enableImageSelection={false}
       />

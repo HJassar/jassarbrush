@@ -1,7 +1,11 @@
-import { CustomImage } from "../components/Gallery";
+import { Image } from "react-grid-gallery";
 
-export default function processAirtableRecords(records: any[]) {
-  const processedImages: CustomImage[] = records.map((image: any) => {
+export interface CustomImage extends Image {
+  original: string;
+}
+
+function processAirtableRecords(records: any[]) {
+  const processedImages: any[] = records.map((image: any) => {
     const { id, fields } = image;
     const { title, featured, file, description } = fields;
     const { url, thumbnails } = file[0];
@@ -16,3 +20,5 @@ export default function processAirtableRecords(records: any[]) {
   });
   return processedImages;
 }
+
+export default processAirtableRecords;
