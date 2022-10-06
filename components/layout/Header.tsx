@@ -19,9 +19,12 @@ import { Home as HomeIcon, Menu as MenuIcon } from "@mui/icons-material";
 import LinkRouter from "../LinkRouter";
 
 const linkProps = {
-  color: "inherit",
-  display: "block",
-  ml: 1,
+  "color": "inherit",
+  "display": "block",
+  "ml": 1,
+  "&:hover": {
+    color: "#ffa500 ",
+  },
 };
 
 const pages: any[] = [
