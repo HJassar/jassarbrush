@@ -14,7 +14,13 @@ import {
   Slide,
   useScrollTrigger,
 } from "@mui/material";
-import { Home as HomeIcon, Menu as MenuIcon } from "@mui/icons-material";
+import {
+  Home as HomeIcon,
+  Menu as MenuIcon,
+  FacebookRounded as FacebookIcon,
+  YouTube as YouTubeIcon,
+  Instagram as InstagramIcon,
+} from "@mui/icons-material";
 
 import LinkRouter from "../LinkRouter";
 
@@ -77,6 +83,38 @@ export default function Header() {
   };
 
   const trigger = useScrollTrigger({ threshold: 100 });
+
+  const socialLinks = (
+    <Box display="flex" alignItems="center" ml={2}>
+      <LinkRouter
+        target="_blank"
+        to="https://web.facebook.com/JassarBrush"
+        rel="noreferrer"
+        color="inherit"
+        sx={{ "&:hover": { color: "#ffa500" }, "transition": ".3s", "ml": 2 }}
+      >
+        <FacebookIcon />
+      </LinkRouter>
+      <LinkRouter
+        target="_blank"
+        to="https://www.instagram.com/jassar_brush/"
+        rel="noreferrer"
+        color="inherit"
+        sx={{ "&:hover": { color: "#ffa500" }, "transition": ".3s", "ml": 2 }}
+      >
+        <InstagramIcon />
+      </LinkRouter>
+      <LinkRouter
+        target="_blank"
+        to="https://www.youtube.com/channel/UCSoZteOTIlCssxEtkhcUmIw/featured"
+        rel="noreferrer"
+        color="inherit"
+        sx={{ "&:hover": { color: "#ffa500" }, "transition": ".3s", "ml": 2 }}
+      >
+        <YouTubeIcon />
+      </LinkRouter>
+    </Box>
+  );
 
   return (
     <Slide in={!trigger && !isLBOpen}>
@@ -165,6 +203,7 @@ export default function Header() {
                   {page}
                 </Box>
               ))}
+              {socialLinks}
             </Box>
           </Toolbar>
         </Container>
