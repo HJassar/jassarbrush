@@ -80,6 +80,7 @@ export default function ImageGallery({ category }: { category: string }) {
       {!!currentImage && (
         /* @ts-ignore */
         <Lightbox
+          wrapperClassName="lb-wrapper"
           mainSrc={currentImage.original}
           imageTitle={currentImage.caption}
           mainSrcThumbnail={currentImage.src}
