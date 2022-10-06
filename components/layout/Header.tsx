@@ -1,16 +1,22 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { Home as HomeIcon } from "@mui/icons-material";
+import { useContext, useState } from "react";
+import { LBContext } from "../../LBContext";
+
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Menu,
+  Container,
+  Button,
+  MenuItem,
+  Divider,
+  Slide,
+  useScrollTrigger,
+} from "@mui/material";
+import { Home as HomeIcon, Menu as MenuIcon } from "@mui/icons-material";
+
 import LinkRouter from "../LinkRouter";
-import { Divider, Slide, Typography, useScrollTrigger } from "@mui/material";
 
 const linkProps = {
   color: "inherit",
@@ -57,9 +63,9 @@ const pages: any[] = [
 ];
 
 export default function Header() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null,
-  );
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const { isLBOpen } = useContext(LBContext);
+
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -70,7 +76,7 @@ export default function Header() {
   const trigger = useScrollTrigger({ threshold: 100 });
 
   return (
-    <Slide in={!trigger}>
+    <Slide in={!trigger && !isLBOpen}>
       <AppBar position="fixed" sx={{ background: "rgba(0,0,0,0.7)" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -176,7 +182,7 @@ function FineArt() {
     { label: "Landscapes", slug: "landscapes" },
   ];
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };

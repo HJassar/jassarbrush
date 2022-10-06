@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { LBContext } from "../LBContext";
+
 import { Gallery, Image } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
@@ -13,6 +15,7 @@ export interface CustomImage extends Image {
 export default function ImageGallery({ category }: { category: string }) {
   const [images, setImages] = useState<CustomImage[]>([]);
   const [index, setIndex] = useState(-1);
+  const { setIsLBOpen } = useContext(LBContext);
 
   const currentImage = images[index];
   const nextIndex = (index + 1) % images.length;
@@ -20,8 +23,14 @@ export default function ImageGallery({ category }: { category: string }) {
   const prevIndex = (index + images.length - 1) % images.length;
   const prevImage = images[prevIndex] || currentImage;
 
-  const handleClick = (index: number, item: CustomImage) => setIndex(index);
-  const handleClose = () => setIndex(-1);
+  const handleClick = (index: number, item: CustomImage) => {
+    setIsLBOpen(true);
+    setIndex(index);
+  };
+  const handleClose = () => {
+    setIndex(-1);
+    setIsLBOpen(false);
+  };
   const handleMovePrev = () => setIndex(prevIndex);
   const handleMoveNext = () => setIndex(nextIndex);
 
