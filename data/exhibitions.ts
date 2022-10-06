@@ -7,7 +7,12 @@ export interface IExhibit {
 
 const exhibitions: IExhibit[] = [
   {
-    title: '"Our Aquatic Planet" Solo Show, Artless Bastard Gallery',
+    title: '"Hygge: A Pop Up Gallery", group show.',
+    month: "November 2022",
+    city: "Milwaukee, WI USA",
+  },
+  {
+    title: '"Our Aquatic Planet" Solo Show, The Art Connective',
     month: "May 2022",
     city: "Green Bay, WI USA",
   },
@@ -17,7 +22,7 @@ const exhibitions: IExhibit[] = [
     city: " Green Bay, WI USA",
   },
   {
-    title: '"Critters" 4th Annual Juried Show, Artless Bastard Gallery',
+    title: '"Critters" 4th Annual Juried Show, The Art Connective',
     month: "Dec 2021",
     city: "Green Bay, WI USA",
   },

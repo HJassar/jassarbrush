@@ -9,7 +9,6 @@ function processAirtableRecords(records: any[]) {
     const { id, fields } = image;
     const { title, featured, file, description } = fields;
     const { url, thumbnails } = file[0];
-    console.log(thumbnails);
     return {
       id,
       original: url,

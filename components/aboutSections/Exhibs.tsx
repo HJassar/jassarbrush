@@ -25,8 +25,8 @@ export default function Exhibs() {
             </Typography>
             <ul>
               {exhibitions.map((ex: IExhibit, index: number) => (
-                <li key={index} style={{ marginBottom: "0.5em" }}>
-                  <strong>{ex.title}</strong>
+                <li key={index} style={{ marginBottom: "1em" }}>
+                  {ex.title}
                   <br />
                   {ex.url && (
                     <>
