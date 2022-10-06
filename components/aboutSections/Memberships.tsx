@@ -24,7 +24,9 @@ export default function Memberships() {
           </Typography>
           <ul>
             {memberships.map((m: string, index: number) => (
-              <li style={{ marginBottom: "0.5em" }}>{m}</li>
+              <li key={index} style={{ marginBottom: "0.5em" }}>
+                {m}
+              </li>
             ))}
           </ul>
         </Container>

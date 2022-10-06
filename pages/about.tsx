@@ -1,3 +1,5 @@
+import { NextPage } from "next";
+
 import { Box } from "@mui/material";
 import Layout from "../components/layout/Layout";
 
@@ -7,7 +9,7 @@ import Memberships from "../components/aboutSections/Memberships";
 import Awards from "../components/aboutSections/Awards";
 import Publications from "../components/aboutSections/Publications";
 
-export default function () {
+const AboutPage: NextPage = () => {
   return (
     <Layout>
       <Box>
@@ -19,4 +21,6 @@ export default function () {
       </Box>
     </Layout>
   );
-}
+};
+
+export default AboutPage;

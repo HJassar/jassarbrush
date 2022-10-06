@@ -24,7 +24,9 @@ export default function Awards() {
           <div ref={ref} />
           <ul>
             {awards.map((award: string, index: number) => (
-              <li style={{ marginBottom: "0.5em" }}>{award}</li>
+              <li key={index} style={{ marginBottom: "0.5em" }}>
+                {award}
+              </li>
             ))}
           </ul>
         </Container>
