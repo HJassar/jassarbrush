@@ -34,7 +34,7 @@ const linkProps = {
 };
 
 const pages: any[] = [
-  <LinkRouter key="0" sx={linkProps} underline="none" to="/#about">
+  <LinkRouter key="0" sx={linkProps} underline="none" to="/about">
     <Button sx={{ "&hover:": { color: "#ffa500" } }} color="inherit">
       About
     </Button>
@@ -66,7 +66,7 @@ const pages: any[] = [
   >
     <Button color="inherit">Shop</Button>
   </LinkRouter>,
-  <LinkRouter key="4" sx={linkProps} underline="none" to="/#contact">
+  <LinkRouter key="4" sx={linkProps} underline="none" to="#contact">
     <Button color="inherit">Contact</Button>
   </LinkRouter>,
 ];
