@@ -5,7 +5,7 @@ import { LBProvider } from "../LBContext";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <LBProvider>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </LBProvider>
   );
 }
