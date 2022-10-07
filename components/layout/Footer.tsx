@@ -7,6 +7,7 @@ import { Box, Container } from "@mui/material";
 import React from "react";
 import ContactForm from "../ContactForm";
 import LinkRouter from "../LinkRouter";
+import Synafy from "../Synafy";
 
 export default function Footer() {
   return (
@@ -82,15 +83,20 @@ export default function Footer() {
           color: "rgba(255,255,255,0.8)",
         }}
       >
-        <Container
-          maxWidth="xl"
-          sx={{
-            textAlign: "center",
-            p: 2,
-          }}
-        >
-          All artwork &#169; {new Date().getFullYear()} Alhaitham Jassar
-        </Container>
+        <Box display="flex" alignItems="center">
+          <Container
+            maxWidth="xl"
+            sx={{
+              textAlign: "center",
+              p: 2,
+            }}
+          >
+            All artwork &#169; {new Date().getFullYear()} Alhaitham Jassar
+          </Container>
+          <Box pr={3} py={1}>
+            <Synafy />
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
