@@ -15,10 +15,10 @@ export default function LinkRouter(props: LinkRouterProps) {
           component="a"
           underline="none"
           sx={{
-            "color": "#ffa500",
+            "color": "#ffc04c",
             "transition": ".3s",
-            "opacity": 0.8,
-            "&:hover": { opacity: 1, color: "#ffa500" },
+            "opacity": 1,
+            "&:hover": { color: "#ffa500" },
             ...sx,
           }}
           {...rest}
