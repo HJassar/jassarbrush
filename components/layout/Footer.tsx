@@ -53,8 +53,7 @@ export default function Footer() {
               target="_blank"
               to="https://web.facebook.com/JassarBrush"
               rel="noreferrer"
-              color="inherit"
-              sx={{ "&:hover": { color: "#3b5998" }, "transition": ".3s" }}
+              sx={{ color: "white" }}
             >
               <FacebookIcon fontSize="large" />
             </LinkRouter>
@@ -62,8 +61,7 @@ export default function Footer() {
               target="_blank"
               to="https://www.instagram.com/jassar_brush/"
               rel="noreferrer"
-              color="inherit"
-              sx={{ "&:hover": { color: "#3b5998" }, "transition": ".3s" }}
+              sx={{ color: "white" }}
             >
               <InstagramIcon fontSize="large" />
             </LinkRouter>
@@ -71,8 +69,7 @@ export default function Footer() {
               target="_blank"
               to="https://www.youtube.com/channel/UCSoZteOTIlCssxEtkhcUmIw/featured"
               rel="noreferrer"
-              color="inherit"
-              sx={{ "&:hover": { color: "#3b5998" }, "transition": ".3s" }}
+              sx={{ color: "white" }}
             >
               <YouTubeIcon fontSize="large" />
             </LinkRouter>

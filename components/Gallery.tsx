@@ -7,6 +7,7 @@ import "react-image-lightbox/style.css";
 
 import useData from "../hooks/useData";
 import processAirtableRecords, { CustomImage } from "../lib/processATRecs";
+import { LinearProgress } from "@mui/material";
 
 export default function ImageGallery({ category }: { category: string }) {
   const [images, setImages] = useState<CustomImage[]>([]);
@@ -44,7 +45,7 @@ export default function ImageGallery({ category }: { category: string }) {
   }, [data]);
 
   // Handle loading and errors
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LinearProgress />;
   if (images.length === 0)
     return <div>No images found for the selected category</div>;
 

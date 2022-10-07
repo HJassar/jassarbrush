@@ -7,11 +7,23 @@ interface LinkRouterProps extends LinkProps {
 }
 
 export default function LinkRouter(props: LinkRouterProps) {
-  const { to, replace, children, ...rest } = props;
+  const { to, replace, children, sx, ...rest } = props;
   if (to)
     return (
       <NextLink href={to} replace={replace}>
-        <Link component="a" sx={{ cursor: "pointer" }} {...rest} href={to}>
+        <Link
+          component="a"
+          underline="none"
+          sx={{
+            "color": "#ffa500",
+            "transition": ".3s",
+            "opacity": 0.8,
+            "&:hover": { opacity: 1, color: "#ffa500" },
+            ...sx,
+          }}
+          {...rest}
+          href={to}
+        >
           {children}
         </Link>
       </NextLink>

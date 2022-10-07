@@ -90,8 +90,7 @@ export default function Header() {
         target="_blank"
         to="https://web.facebook.com/JassarBrush"
         rel="noreferrer"
-        color="inherit"
-        sx={{ "&:hover": { color: "#ffa500" }, "transition": ".3s", "ml": 2 }}
+        sx={{ ml: 2, color: "white" }}
       >
         <FacebookIcon />
       </LinkRouter>
@@ -99,8 +98,7 @@ export default function Header() {
         target="_blank"
         to="https://www.instagram.com/jassar_brush/"
         rel="noreferrer"
-        color="inherit"
-        sx={{ "&:hover": { color: "#ffa500" }, "transition": ".3s", "ml": 2 }}
+        sx={{ ml: 2, color: "white" }}
       >
         <InstagramIcon />
       </LinkRouter>
@@ -108,8 +106,7 @@ export default function Header() {
         target="_blank"
         to="https://www.youtube.com/channel/UCSoZteOTIlCssxEtkhcUmIw/featured"
         rel="noreferrer"
-        color="inherit"
-        sx={{ "&:hover": { color: "#ffa500" }, "transition": ".3s", "ml": 2 }}
+        sx={{ ml: 2, color: "white" }}
       >
         <YouTubeIcon />
       </LinkRouter>
@@ -165,11 +162,14 @@ export default function Header() {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: "block", md: "none" },
+                  "& .MuiPaper-root": { background: "rgba(0,0,0,0.7)" },
+                  "display": { xs: "block", md: "none" },
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page}>{page}</MenuItem>
+                  <MenuItem sx={{ color: "white" }} key={page}>
+                    {page}
+                  </MenuItem>
                 ))}
               </Menu>
             </Box>
@@ -251,15 +251,16 @@ function FineArt() {
           vertical: "top",
           horizontal: "left",
         }}
+        sx={{ "& .MuiPaper-root": { background: "rgba(0,0,0,0.7)" } }}
         open={Boolean(anchorEl)}
         onClose={handleCloseNavMenu}
       >
         {items.map((item: IItem, index: number) => (
           <LinkRouter
             key={index}
-            color="inherit"
             underline="none"
             to={"/gallery?category=" + item.slug}
+            sx={{ color: "white" }}
           >
             <MenuItem key={item.slug}>{item.label}</MenuItem>
             {index < items.length - 1 && <Divider />}
