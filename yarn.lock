@@ -244,6 +244,20 @@
   dependencies:
     "@babel/runtime" "^7.19.0"
 
+"@mui/lab@^5.0.0-alpha.102":
+  version "5.0.0-alpha.102"
+  resolved "https://registry.yarnpkg.com/@mui/lab/-/lab-5.0.0-alpha.102.tgz#c6238777d7b1ae94a97d5d56cbbd95b9716a9b2b"
+  integrity sha512-hIJ82FGdll2NmEp6b2kBhIZ5j/yiOThObBoSYo7WhH+cQCLowbgdAMH45JP9/R8J2qe2lq1K/PI3bLgcGVZ+Rw==
+  dependencies:
+    "@babel/runtime" "^7.19.0"
+    "@mui/base" "5.0.0-alpha.100"
+    "@mui/system" "^5.10.8"
+    "@mui/types" "^7.2.0"
+    "@mui/utils" "^5.10.6"
+    clsx "^1.2.1"
+    prop-types "^15.8.1"
+    react-is "^18.2.0"
+
 "@mui/material@^5.10.8":
   version "5.10.8"
   resolved "https://registry.npmjs.org/@mui/material/-/material-5.10.8.tgz"
@@ -1351,6 +1365,11 @@ globby@^11.1.0:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
+goober@^2.1.10:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.1.11.tgz#bbd71f90d2df725397340f808dbe7acc3118e610"
+  integrity sha512-5SS2lmxbhqH0u9ABEWq7WPU69a4i2pYcHeCxqaNq6Cw3mnrF0ghWNM4tEGid4dKy8XNIAUbuThuozDHHKJVh3A==
+
 grapheme-splitter@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz"
@@ -2194,6 +2213,18 @@ react-grid-gallery@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-grid-gallery/-/react-grid-gallery-1.0.0.tgz#31604b9488dfa75a899aa39bc8884138f0409a12"
   integrity sha512-S1gr6WXBlPFVrE0x2BHuu7jhyaB61mabcMQyx+8KCgAyKzGza0WF67AfAnS9Q00aurFEq4IP8eqb2Bk5F4RAmQ==
+
+react-hook-form@^7.37.0:
+  version "7.37.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.37.0.tgz#4d1738f092d3d8a3ade34ee892d97350b1032b19"
+  integrity sha512-6NFTxsnw+EXSpNNvLr5nFMjPdYKRryQcelTHg7zwBB6vAzfPIcZq4AExP4heVlwdzntepQgwiOQW4z7Mr99Lsg==
+
+react-hot-toast@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-hot-toast/-/react-hot-toast-2.4.0.tgz#b91e7a4c1b6e3068fc599d3d83b4fb48668ae51d"
+  integrity sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA==
+  dependencies:
+    goober "^2.1.10"
 
 react-image-lightbox@^5.1.4:
   version "5.1.4"

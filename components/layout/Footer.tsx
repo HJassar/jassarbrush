@@ -3,8 +3,9 @@ import {
   YouTube as YouTubeIcon,
   Instagram as InstagramIcon,
 } from "@mui/icons-material";
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
+import ContactForm from "../ContactForm";
 import LinkRouter from "../LinkRouter";
 
 export default function Footer() {
@@ -19,39 +20,7 @@ export default function Footer() {
         }}
         id="contact"
       >
-        <Box
-          minHeight={400}
-          width={{ xs: "100%", sm: "60%" }}
-          sx={{
-            mr: { xs: 0, sm: 5 },
-            p: { xs: 1, sm: 3 },
-            borderRadius: 5,
-            background: "#FFFFFF",
-          }}
-        >
-          <TextField
-            fullWidth
-            variant="filled"
-            label="Your Name"
-            sx={{ mb: 2 }}
-          />
-          <TextField
-            fullWidth
-            variant="filled"
-            label="Your Email"
-            sx={{ mb: 2 }}
-          />
-          <TextField
-            fullWidth
-            label="Message"
-            variant="filled"
-            multiline
-            rows={4}
-          />
-          <Button color="primary" fullWidth variant="contained">
-            Submit
-          </Button>
-        </Box>
+        <ContactForm />
         <Box
           width={{ xs: "100%", sm: "40%" }}
           display="flex"

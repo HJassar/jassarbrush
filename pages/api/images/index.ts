@@ -1,10 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import backFetch from "../_helpers/backFetch";
 
-type Data = {
-  name: string;
-};
-
 const api = "https://api.airtable.com/v0";
 const base = "apprWMFAjxSZ0yeyJ";
 const table = "tbl8Zv9SFZCr58633";
@@ -15,7 +11,7 @@ const api_key = process.env.AT_API_KEY;
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  res: NextApiResponse,
 ) {
   const { category_slug, featured } = req.query;
 
