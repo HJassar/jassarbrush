@@ -144,7 +144,15 @@ function FeaturedImage() {
             <ReactMarkdown>{theFeatured.fields.description}</ReactMarkdown>
           )}
           <LinkRouter
-            underline="hover"
+            underline="none"
+            sx={{
+              "color": "#ffa500",
+              "opacity": "0.8",
+              "transition": "all .3s ease",
+              "&:hover": {
+                opacity: "1",
+              },
+            }}
             to={`/gallery?category=${theFeatured.fields.category_slug[0]}`}
           >
             More like this
