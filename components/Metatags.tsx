@@ -3,7 +3,7 @@ import Head from "next/head";
 export default function Metatags({
   title = "AJ",
   description = "Our natural heritage is a joy to paint and I feel honored to have the ability to transfer that beauty and record it into works of art for the viewer to enjoy.",
-  image = "jassarbrush.com/assets/home/signature.png",
+  image = "jassarbrush.com/assets/og.jpg",
 }) {
   return (
     <Head>
