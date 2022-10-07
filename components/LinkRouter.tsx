@@ -18,7 +18,7 @@ export default function LinkRouter(props: LinkRouterProps) {
             "color": "#ffc04c",
             "transition": ".3s",
             "opacity": 1,
-            "&:hover": { color: "#ffa500" },
+            "&:hover": { opacity: 1, color: "#ffa500" },
             ...sx,
           }}
           {...rest}
