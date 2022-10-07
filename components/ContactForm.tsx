@@ -21,7 +21,7 @@ export default function ContactForm() {
 
   return (
     <Box
-      minHeight={400}
+      minHeight={350}
       width={{ xs: "100%", sm: "60%" }}
       sx={{
         my: 2,
