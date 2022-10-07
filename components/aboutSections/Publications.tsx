@@ -51,13 +51,12 @@ export default function Publications() {
               timeout={{ enter: 1000, exit: 100 }}
               key={index}
             >
-              <Grid item sm={6 - 0.5} md={(12 - 0.5) / publications.length}>
+              <Grid item xs={12} md={(12 - 0.5) / publications.length}>
                 <LinkRouter
                   target="_blank"
                   rel="noreferrer"
                   to={pub.url}
-                  color="white"
-                  underline="none"
+                  sx={{ color: "white" }}
                 >
                   <CardMedia
                     component="img"

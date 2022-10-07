@@ -13,6 +13,7 @@ import {
   Divider,
   Slide,
   useScrollTrigger,
+  Typography,
 } from "@mui/material";
 import {
   Home as HomeIcon,
@@ -25,19 +26,16 @@ import {
 import LinkRouter from "../LinkRouter";
 
 const linkProps = {
-  "color": "inherit",
-  "display": "block",
-  "ml": 1,
-  "&:hover": {
-    color: "#ffa500 ",
-  },
+  textTransform: "uppercase",
+  p: 1,
+  display: "flex",
+  color: "white",
+  fontWeight: 600,
 };
 
 const pages: any[] = [
   <LinkRouter key="0" sx={linkProps} underline="none" to="/about">
-    <Button sx={{ "&hover:": { color: "#ffa500" } }} color="inherit">
-      About
-    </Button>
+    About
   </LinkRouter>,
   <FineArt key="fa" />,
   <LinkRouter
@@ -46,7 +44,7 @@ const pages: any[] = [
     underline="none"
     to="/gallery?category=illustrations"
   >
-    <Button color="inherit">Illustrations</Button>
+    Illustrations
   </LinkRouter>,
   <LinkRouter
     key="2"
@@ -54,20 +52,19 @@ const pages: any[] = [
     underline="none"
     to="/gallery?category=caricatures"
   >
-    <Button color="inherit">Caricatures</Button>
+    Caricatures
   </LinkRouter>,
   <LinkRouter
     key="3"
     sx={linkProps}
     target="_blank"
     rel="noopener"
-    underline="none"
     to="https://displate.com/jassar?type=displates"
   >
-    <Button color="inherit">Shop</Button>
+    Shop
   </LinkRouter>,
   <LinkRouter key="4" sx={linkProps} underline="none" to="#contact">
-    <Button color="inherit">Contact</Button>
+    Contact
   </LinkRouter>,
 ];
 
@@ -233,12 +230,9 @@ function FineArt() {
   };
   return (
     <Box>
-      <Button
-        sx={{ ...linkProps, cursor: "pointer" }}
-        onClick={handleOpenNavMenu}
-      >
+      <LinkRouter to="#" sx={{ ...linkProps }} onClick={handleOpenNavMenu}>
         Fine Art
-      </Button>
+      </LinkRouter>
       <Menu
         id="fine-art-menu"
         anchorEl={anchorEl}
