@@ -97,8 +97,6 @@ function FeaturedImage() {
     if (data) setTheFeatured(data[0]);
   }, [data]);
 
-  if (loading) return <CircularProgress />;
-
   if (!theFeatured) return null;
 
   return (
@@ -114,51 +112,55 @@ function FeaturedImage() {
         fontSize: "1.2em",
       }}
     >
-      <Container
-        sx={{
-          textAlign: "center",
-          p: 2,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Typography component="h2" variant="h4" my={2}>
-          Featured Artwork
-        </Typography>
-        <Box sx={{ width: "80%" }}>
-          <img
-            src={theFeatured.fields.file[0].url}
-            alt="Featured Artwork"
-            style={{
-              width: "100%",
-              objectFit: "contain",
-              borderRadius: "15px",
-              boxShadow: "0 0 10px rgba(0,0,0,.3)",
-            }}
-          />
-          <Typography component="h3" variant="h5" my={1}>
-            {theFeatured.fields.title}
+      {loading ? (
+        <CircularProgress />
+      ) : (
+        <Container
+          sx={{
+            textAlign: "center",
+            p: 2,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Typography component="h2" variant="h4" my={2}>
+            Featured Artwork
           </Typography>
-          {theFeatured.fields.description && (
-            <ReactMarkdown>{theFeatured.fields.description}</ReactMarkdown>
-          )}
-          <LinkRouter
-            underline="none"
-            sx={{
-              "color": "#ffa500",
-              "opacity": "0.8",
-              "transition": "all .3s ease",
-              "&:hover": {
-                opacity: "1",
-              },
-            }}
-            to={`/gallery?category=${theFeatured.fields.category_slug[0]}`}
-          >
-            More like this
-          </LinkRouter>
-        </Box>
-      </Container>
+          <Box sx={{ width: "80%" }}>
+            <img
+              src={theFeatured.fields.file[0].url}
+              alt="Featured Artwork"
+              style={{
+                width: "100%",
+                objectFit: "contain",
+                borderRadius: "15px",
+                boxShadow: "0 0 10px rgba(0,0,0,.3)",
+              }}
+            />
+            <Typography component="h3" variant="h5" my={1}>
+              {theFeatured.fields.title}
+            </Typography>
+            {theFeatured.fields.description && (
+              <ReactMarkdown>{theFeatured.fields.description}</ReactMarkdown>
+            )}
+            <LinkRouter
+              underline="none"
+              sx={{
+                "color": "#ffa500",
+                "opacity": "0.8",
+                "transition": "all .3s ease",
+                "&:hover": {
+                  opacity: "1",
+                },
+              }}
+              to={`/gallery?category=${theFeatured.fields.category_slug[0]}`}
+            >
+              More like this
+            </LinkRouter>
+          </Box>
+        </Container>
+      )}
     </Box>
   );
 }
