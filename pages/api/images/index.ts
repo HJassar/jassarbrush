@@ -6,9 +6,6 @@ const base = "apprWMFAjxSZ0yeyJ";
 const table = "tbl8Zv9SFZCr58633";
 const api_key = process.env.AT_API_KEY;
 
-// encodeURIComponent
-// https://api.airtable.com/v0/apprWMFAjxSZ0yeyJ/tbl8Zv9SFZCr58633?filterByFormula=category_slug%3D%22water-worlds%22&api_key=keyTAPZAvtvmJplEj
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
