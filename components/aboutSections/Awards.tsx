@@ -12,11 +12,7 @@ export default function Awards() {
         background: "#00000016",
       }}
     >
-      <Fade
-        in={inView}
-        mountOnEnter={true}
-        timeout={{ enter: 1000, exit: 100 }}
-      >
+      <Fade in={true} mountOnEnter={true} timeout={{ enter: 1000, exit: 100 }}>
         <Container sx={{ p: 2, py: 3 }}>
           <Typography variant="h5" component="h2" mb={4}>
             Awards &amp; Honors
