@@ -55,32 +55,34 @@ export default function About() {
                 About Me
               </Typography>
               <Typography mb={1}>
-                Nature is full of inspiration and wonder. It is delicate and yet
-                intimidating, familiar and yet mysterious. Our natural heritage
-                is a joy to paint and I feel honored to have the ability to
-                transfer that beauty and record it into works of art for the
-                viewer to enjoy.
+                As an artist, I find inspiration and wonder in the natural
+                world. From its delicate beauty to its intimidating mystery, our
+                natural heritage is a joy to paint, and I feel honored to record
+                its beauty in my works of art for others to relish.
               </Typography>
               <Typography mb={1}>
-                My works are mainly focused on sea life and underwater scenery
-                even though I dabble into landscapes and fantasy illustrations
-                every now and then. Art has been a huge part of my life growing
-                up, but I took art seriously during college by teaching myself
-                oil painting and taking on commissions whenever I could, and the
-                journey of learning new techniques and improving my own skills
-                continues today. One of the personal highlights of my artistic
-                career is having a work of mine - HIV in Plasma - included in
-                the New York State Museum’s permanent collection.
+                My focus lies mainly on sea life and underwater scenery,
+                although I also dabble in landscapes and fantasy illustrations.
+                Art has been an essential part of my life since childhood, but I
+                took it seriously during college, teaching myself oil painting
+                and taking on commissions whenever possible. Today, I continue
+                to learn new techniques and hone my skills, always striving to
+                improve.
               </Typography>
               <Typography mb={1}>
-                In regards to mediums and tools that I use for creating my art,
-                oil colors are the main medium of choice. Other favorites
-                include Acrylics, watercolors, charcoal, ink, and pencils. My
-                art style can be categorized as representational realism. I hope
-                that my art brings you pleasure and joy, and please don’t
-                hesitate to contact me for any enquiries. If you are interested
-                in extra content like sketches, progress shots, creepy selfies
-                and more you may visit my social media accounts on{" "}
+                Below, you’ll find a list of all my previous shows and
+                activities, but one of my proudest achievements is having a work
+                of mine, "HIV in Plasma," included in the New York State
+                Museum's permanent collection. I work mainly with oil colors,
+                although I also enjoy using acrylics, watercolors, charcoal,
+                ink, and pencils. My art style can be characterized as
+                representational realism.
+              </Typography>
+              <Typography mb={1}>
+                I hope my art brings you pleasure and joy, and I invite you to
+                contact me with any inquiries. For those interested in
+                additional content such as sketches, progress shots, creepy
+                selfies, and more, please visit my{" "}
                 <LinkRouter
                   target="_blank"
                   to="https://web.facebook.com/JassarBrush"
@@ -95,7 +97,8 @@ export default function About() {
                   rel="noreferrer"
                 >
                   Instagram.
-                </LinkRouter>
+                </LinkRouter>{" "}
+                accounts.
               </Typography>
               <Typography mb={2}>- AJ</Typography>
             </Box>
