@@ -70,12 +70,12 @@ export default function About() {
                 improve.
               </Typography>
               <Typography mb={1}>
-                Below, you’ll find a list of all my previous shows and
+                Below, you&apos;ll find a list of all my previous shows and
                 activities, but one of my proudest achievements is having a work
-                of mine, "HIV in Plasma," included in the New York State
-                Museum's permanent collection. I work mainly with oil colors,
-                although I also enjoy using acrylics, watercolors, charcoal,
-                ink, and pencils. My art style can be characterized as
+                of mine, &quot;HIV in Plasma,&quot; included in the New York
+                State Museum&apos;s permanent collection. I work mainly with oil
+                colors, although I also enjoy using acrylics, watercolors,
+                charcoal, ink, and pencils. My art style can be characterized as
                 representational realism.
               </Typography>
               <Typography mb={1}>
