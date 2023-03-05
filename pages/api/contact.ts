@@ -4,7 +4,6 @@ import backFetch from "./_helpers/backFetch";
 const api = "https://api.airtable.com/v0";
 const base = "apprWMFAjxSZ0yeyJ";
 const table = "tblwHjCEVb5xzfb0q";
-const api_key = process.env.AT_API_KEY;
 
 export default async function handler(
   req: NextApiRequest,
@@ -31,6 +30,6 @@ export default async function handler(
 
   console.log(req.body.records[0].fields);
 
-  const url = `${api}/${base}/${table}?api_key=${api_key}`;
+  const url = `${api}/${base}/${table}`;
   await backFetch(url, req, res);
 }

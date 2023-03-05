@@ -1,9 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
+const token = process.env.AT_TOKEN;
 
 async function asyncTryCatch(fn: any, res: NextApiResponse) {
   try {
     const response = await fn();
     const data = await response.json();
+    console.log(data);
     res.status(response.status).json({ data: data.records });
   } catch (error: any) {
     if (error.code === "ECONNREFUSED")
@@ -23,7 +25,7 @@ export default async function backFetch(
     method,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": req.headers.authorization || "",
+      "Authorization": "Bearer " + token,
     },
   };
   if (method !== "GET") init.body = JSON.stringify(body);
