@@ -4,7 +4,6 @@ import backFetch from "../_helpers/backFetch";
 const api = "https://api.airtable.com/v0";
 const base = "apprWMFAjxSZ0yeyJ";
 const table = "tbl8Zv9SFZCr58633";
-const api_key = process.env.AT_API_KEY;
 
 export default async function handler(
   req: NextApiRequest,
@@ -24,7 +23,7 @@ export default async function handler(
     encodeURIComponent("sort[0][field]") + `=${encodeURIComponent("order")}`;
   const sortDirection = encodeURIComponent("sort[0][direction]") + `=asc`;
   // One big url!
-  const url = `${api}/${base}/${table}?${filter}&${sortField}&${sortDirection}&api_key=${api_key}`;
+  const url = `${api}/${base}/${table}?${filter}&${sortField}&${sortDirection}`;
 
   await backFetch(url, req, res);
 }
