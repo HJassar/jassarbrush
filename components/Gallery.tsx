@@ -97,7 +97,9 @@ export default function ImageGallery({ category }: { category: string }) {
           imageCaption={
             currentImage.caption && (
               <Box>
-                <ReactMarkdown>{currentImage.caption}</ReactMarkdown>
+                <ReactMarkdown>
+                  {currentImage.caption.toLocaleString()}
+                </ReactMarkdown>
               </Box>
             )
           }
