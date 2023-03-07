@@ -5,9 +5,11 @@ import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 
+import ReactMarkdown from "react-markdown";
+
 import useData from "../hooks/useData";
 import processAirtableRecords, { CustomImage } from "../lib/processATRecs";
-import { LinearProgress } from "@mui/material";
+import { Box, LinearProgress, Typography } from "@mui/material";
 
 export default function ImageGallery({ category }: { category: string }) {
   const [images, setImages] = useState<CustomImage[]>([]);
@@ -71,7 +73,7 @@ export default function ImageGallery({ category }: { category: string }) {
                 fontSize: "90%",
               }}
             >
-              <div>{image.caption}</div>
+              <div>{image.title}</div>
             </div>
           ),
         }))}
@@ -83,7 +85,7 @@ export default function ImageGallery({ category }: { category: string }) {
         <Lightbox
           wrapperClassName="lb-wrapper"
           mainSrc={currentImage.original}
-          imageTitle={currentImage.caption}
+          imageTitle={currentImage.title}
           mainSrcThumbnail={currentImage.src}
           nextSrc={nextImage.original}
           nextSrcThumbnail={nextImage.src}
@@ -92,6 +94,13 @@ export default function ImageGallery({ category }: { category: string }) {
           onCloseRequest={handleClose}
           onMovePrevRequest={handleMovePrev}
           onMoveNextRequest={handleMoveNext}
+          imageCaption={
+            currentImage.caption && (
+              <Box>
+                <ReactMarkdown>{currentImage.caption}</ReactMarkdown>
+              </Box>
+            )
+          }
         />
       )}
     </div>
