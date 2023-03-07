@@ -28,8 +28,6 @@ export default async function handler(
     ],
   };
 
-  console.log(req.body.records[0].fields);
-
   const url = `${api}/${base}/${table}`;
   await backFetch(url, req, res);
 }

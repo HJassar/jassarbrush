@@ -49,9 +49,9 @@ const Home: NextPage = () => {
     >
       <Container sx={{ textAlign: "center" }}>
         <Typography variant="h5" mb={2}>
-          It’s easy to make a painting look like paint, but it’s much harder to
-          make a painting that pulls in a viewer so completely that he feels the
-          heat of sun on his neck and the sand in his shoes.
+          &ldquo; It’s easy to make a painting look like paint, but it’s much
+          harder to make a painting that pulls in a viewer so completely that he
+          feels the heat of sun on his neck and the sand in his shoes. &rdquo;
         </Typography>
         <Typography variant="h6" color="rgba(255,255,255,.5)">
           James Gurney
@@ -104,19 +104,34 @@ function FeaturedImage() {
       sx={{
         minHeight: "50vh",
         display: "flex",
-        background: "#4e4e4e",
         color: "white",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         fontSize: "1.2em",
+        py: 4,
+        backgroundImage: `url(${bg})`,
+        backgroundAttachment: "fixed",
+        position: "relative",
       }}
     >
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "rgba(0,0,0,0.8)",
+          zIndex: 1,
+        }}
+      ></Box>
       {loading ? (
         <CircularProgress />
       ) : (
         <Container
           sx={{
+            zIndex: 2,
             textAlign: "center",
             p: 2,
             display: "flex",
@@ -124,7 +139,11 @@ function FeaturedImage() {
             alignItems: "center",
           }}
         >
-          <Typography component="h2" variant="h4" my={2}>
+          <Typography
+            component="h2"
+            variant="h4"
+            sx={{ my: 4, fontWeight: 500, textTransform: "uppercase" }}
+          >
             Featured Artwork
           </Typography>
           <Box sx={{ width: "80%" }}>
@@ -138,13 +157,15 @@ function FeaturedImage() {
                 boxShadow: "0 0 10px rgba(0,0,0,.3)",
               }}
             />
-            <Typography component="h3" variant="h5" my={1}>
+            <Typography component="h3" variant="h5" mt={4} mb={1}>
               {theFeatured.fields.title}
             </Typography>
             {theFeatured.fields.description && (
               <ReactMarkdown>{theFeatured.fields.description}</ReactMarkdown>
             )}
             <LinkRouter
+              display={"block"}
+              my={4}
               to={`/gallery?category=${theFeatured.fields.category_slug[0]}`}
             >
               More like this
