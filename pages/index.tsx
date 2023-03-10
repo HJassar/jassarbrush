@@ -9,6 +9,7 @@ import useData from "../hooks/useData";
 import LinkRouter from "../components/LinkRouter";
 
 import ReactMarkdown from "react-markdown";
+import Image from "next/image";
 
 const bg = "/assets/home/wave_bg.jpg";
 const signature = "/assets/home/signature.png";
@@ -111,6 +112,7 @@ function FeaturedImage() {
         fontSize: "1.2em",
         py: 4,
         backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
         backgroundAttachment: "fixed",
         position: "relative",
       }}
@@ -139,18 +141,27 @@ function FeaturedImage() {
             alignItems: "center",
           }}
         >
-          <Typography
-            component="h2"
-            variant="h4"
-            sx={{ my: 4, fontWeight: 500, textTransform: "uppercase" }}
+          <Box
+            sx={{
+              my: 3,
+              minHeight: "8vmin",
+            }}
           >
-            Featured Artwork
-          </Typography>
+            <img
+              src={`/assets/home/featured.png`}
+              alt={"Featured Image"}
+              style={{
+                width: "auto",
+                height: "auto",
+              }}
+            />
+          </Box>
           <Box sx={{ width: "80%" }}>
             <img
               src={theFeatured.fields.file[0].url}
               alt="Featured Artwork"
               style={{
+                maxHeight: "70vh",
                 width: "100%",
                 objectFit: "contain",
                 borderRadius: "15px",
