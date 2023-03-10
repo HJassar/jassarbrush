@@ -5,6 +5,7 @@ async function asyncTryCatch(fn: any, res: NextApiResponse) {
   try {
     const response = await fn();
     const data = await response.json();
+    console.log(data);
     res.status(response.status).json({ data: data.records });
   } catch (error: any) {
     if (error.code === "ECONNREFUSED")
