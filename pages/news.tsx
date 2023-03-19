@@ -53,7 +53,7 @@ const News: NextPage = () => {
                   sx={{
                     display: "flex",
                     flexDirection: {
-                      sm: index % 2 === 0 ? "row" : "row-reverse",
+                      md: index % 2 === 0 ? "row" : "row-reverse",
                       xs: "column",
                     },
                     mb: 2,
@@ -62,7 +62,7 @@ const News: NextPage = () => {
                   {item.fields.Image?.length && (
                     <CardMedia
                       component="img"
-                      sx={{ width: 400 }}
+                      sx={{ width: { md: 400 } }}
                       image={item.fields.Image[0].url}
                       alt={item.fields.Image[0].title}
                     />
