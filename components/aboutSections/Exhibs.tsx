@@ -20,7 +20,12 @@ export default function Exhibs() {
           }}
         >
           <Container sx={{ p: 2 }}>
-            <Typography variant="h5" component="h2" mb={4}>
+            <Typography
+              variant="h5"
+              component="h2"
+              mb={4}
+              textTransform="uppercase"
+            >
               Exhibitions
             </Typography>
             <ul>

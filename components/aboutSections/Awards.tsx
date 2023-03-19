@@ -14,7 +14,12 @@ export default function Awards() {
     >
       <Fade in={true} mountOnEnter={true} timeout={{ enter: 1000, exit: 100 }}>
         <Container sx={{ p: 2, py: 3 }}>
-          <Typography variant="h5" component="h2" mb={4}>
+          <Typography
+            variant="h5"
+            component="h2"
+            mb={4}
+            textTransform="uppercase"
+          >
             Awards &amp; Honors
           </Typography>
           <div ref={ref} />

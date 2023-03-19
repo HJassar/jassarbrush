@@ -221,6 +221,7 @@ function FineArt() {
     { label: "Divers", slug: "divers" },
     { label: "Ships", slug: "ships" },
     { label: "Landscapes", slug: "landscapes" },
+    { label: "Ocean Noir", slug: "ocean-noir" },
   ];
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
