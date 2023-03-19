@@ -5,6 +5,7 @@ import {
   Container,
   LinearProgress,
   Typography,
+  Box,
 } from "@mui/material";
 
 import type { NextPage } from "next";
@@ -43,6 +44,17 @@ const News: NextPage = () => {
           pt: "80px",
         }}
       >
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
+          <img
+            src={`/assets/news.png`}
+            alt="News & Press"
+            style={{
+              width: "auto",
+              height: "auto",
+            }}
+          />
+        </Box>
+
         {data?.filter((item: any) => item.fields.Published).length <= 0
           ? "There are no published news at the moment. Check back later."
           : data
