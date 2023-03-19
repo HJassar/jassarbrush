@@ -29,8 +29,8 @@ export default function Footer() {
           justifyContent="center"
         >
           <Box>
-            To check for the availability of any of my paintings, please feel
-            free to send me a message, or you may also contact me, should you
+            To check for the availability of any of AJ&apos;s paintings, please
+            feel free to send a message, or you may also contact him, should you
             prefer, via{" "}
             <LinkRouter
               target="_blank"

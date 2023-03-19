@@ -38,9 +38,9 @@ export default function Publications() {
           component="h2"
           textAlign="center"
           mb={4}
-          sx={{ color: "white" }}
+          sx={{ color: "white", textTransform: "uppercase" }}
         >
-          Publications That Include My Work
+          Publications That Include AJ&apos;s Work
         </Typography>
         <div ref={ref} />
         <Grid container gap={1}>

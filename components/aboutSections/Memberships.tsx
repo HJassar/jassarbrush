@@ -19,7 +19,12 @@ export default function Memberships() {
         timeout={{ enter: 1000, exit: 100 }}
       >
         <Container sx={{ p: 2 }}>
-          <Typography variant="h5" component="h2" mb={4}>
+          <Typography
+            variant="h5"
+            component="h2"
+            mb={4}
+            textTransform="uppercase"
+          >
             Memberships &amp; Associations
           </Typography>
           <ul>

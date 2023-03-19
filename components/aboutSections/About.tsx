@@ -50,6 +50,7 @@ export default function About() {
                 variant="h5"
                 component="h2"
                 textAlign={{ sm: "center", md: "left" }}
+                textTransform="uppercase"
                 mb={1}
               >
                 About Me
