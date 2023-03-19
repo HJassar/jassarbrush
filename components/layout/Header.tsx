@@ -8,7 +8,6 @@ import {
   IconButton,
   Menu,
   Container,
-  Button,
   MenuItem,
   Divider,
   Slide,
@@ -37,9 +36,12 @@ const pages: any[] = [
   <LinkRouter key="0" sx={linkProps} underline="none" to="/about">
     About
   </LinkRouter>,
+  <LinkRouter key="1" sx={linkProps} underline="none" to="/news">
+    News
+  </LinkRouter>,
   <FineArt key="fa" />,
   <LinkRouter
-    key="1"
+    key="2"
     sx={linkProps}
     underline="none"
     to="/gallery?category=illustrations"
@@ -47,7 +49,7 @@ const pages: any[] = [
     Illustrations
   </LinkRouter>,
   <LinkRouter
-    key="2"
+    key="3"
     sx={linkProps}
     underline="none"
     to="/gallery?category=caricatures"
@@ -55,7 +57,7 @@ const pages: any[] = [
     Caricatures
   </LinkRouter>,
   <LinkRouter
-    key="3"
+    key="4"
     sx={linkProps}
     target="_blank"
     rel="noopener"
@@ -63,7 +65,7 @@ const pages: any[] = [
   >
     Shop
   </LinkRouter>,
-  <LinkRouter key="4" sx={linkProps} underline="none" to="#contact">
+  <LinkRouter key="5" sx={linkProps} underline="none" to="#contact">
     Contact
   </LinkRouter>,
 ];
@@ -113,7 +115,7 @@ export default function Header() {
   return (
     <Slide in={!trigger && !isLBOpen}>
       <AppBar position="fixed" sx={{ background: "rgba(0,0,0,0.7)" }}>
-        <Container maxWidth="xl">
+        <Container>
           <Toolbar disableGutters>
             <LinkRouter
               variant="h6"
