@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 
 import type { NextPage } from "next";
-import { useEffect } from "react";
 
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
@@ -21,10 +20,6 @@ dayjs.extend(customParseFormat);
 
 const News: NextPage = () => {
   const { data, loading } = useData("news", "all", {}, false);
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   if (loading)
     return (
