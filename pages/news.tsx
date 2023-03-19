@@ -83,7 +83,7 @@ const News: NextPage = () => {
                     </Typography>
                     <br />
                     <LinkRouter target="_blank" to={item.fields.URL}>
-                      Link to Article
+                      Click Here to See More
                     </LinkRouter>
                   </CardContent>
                 </Card>
