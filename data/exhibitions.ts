@@ -7,6 +7,11 @@ export interface IExhibit {
 
 const exhibitions: IExhibit[] = [
   {
+    title: "Solo Exhibition, Meadowridge Public Library.",
+    month: "June - September 2023",
+    city: "Madison, WI USA",
+  },
+  {
     title: '"Hygge: A Pop Up Gallery", group show.',
     month: "November 2022",
     city: "Milwaukee, WI USA",
@@ -18,53 +23,53 @@ const exhibitions: IExhibit[] = [
   },
   {
     title: "A Year in Review, the Art Garage",
-    month: "Dec 2021",
+    month: "December 2021",
     city: " Green Bay, WI USA",
   },
   {
     title: '"Critters" 4th Annual Juried Show, The Art Connective',
-    month: "Dec 2021",
+    month: "December 2021",
     city: "Green Bay, WI USA",
   },
   {
     title: "The December Group Art Show, the Jones Gallery",
-    month: "Dec 2021",
+    month: "December 2021",
     city: "Kansas City, MO USA",
   },
   {
     title: "The Locals, an art exhibition",
-    month: "Nov 2021",
+    month: "November 2021",
     city: "Milwaukee, WI USA",
   },
   {
     title: "Art Fluent: Into The Wild - Online Exhibition",
-    month: "Nov 2021",
+    month: "November 2021",
     city: "Milwaukee, WI USA",
   },
   {
     title: "Las Laguna Art Gallery - Online Exhibition",
-    month: "Oct 2021",
+    month: "October 2021",
   },
   {
     title: "The East Side Art Lot",
-    month: "Jun 2021",
+    month: "June 2021",
     city: "Milwaukee, WI USA",
   },
   {
     title: "ENDANGERED: Art4Apes Fine Art and Photography Exhibition",
     url: "www.art4apes.com",
-    month: "Nov 2020",
+    month: "November 2020",
   },
   {
     title:
       "Focus on Nature XIV, the New York State Museum and the Roger Tory Peterson Institute",
     url: "http://www.nysm.nysed.gov/fon",
-    month: "Dec 2016",
+    month: "December 2016",
     city: "Jamestown, NY USA",
   },
   {
     title: "Atlanta Arab Fest art show",
-    month: "Apr 2014",
+    month: "April 2014",
     city: "Atlanta, GA USA",
   },
 ];
