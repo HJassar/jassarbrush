@@ -56,34 +56,30 @@ export default function About() {
                 About Me
               </Typography>
               <Typography mb={1}>
-                As an artist, I find inspiration and wonder in the natural
-                world. From its delicate beauty to its intimidating mystery, our
-                natural heritage is a joy to paint, and I feel honored to record
-                its beauty in my works of art for others to relish.
+                As an artist, Alhaitham Jassar (AKA AJ) finds inspiration and
+                wonder in the natural world. From its delicate beauty to its
+                intimidating mystery, AJ is drawn to the joy of capturing our
+                natural heritage through works of art for others to relish.
               </Typography>
               <Typography mb={1}>
-                My focus lies mainly on sea life and underwater scenery,
-                although I also dabble in landscapes and fantasy illustrations.
-                Art has been an essential part of my life since childhood, but I
-                took it seriously during college, teaching myself oil painting
-                and taking on commissions whenever possible. Today, I continue
-                to learn new techniques and hone my skills, always striving to
-                improve.
+                AJ&apos;s focus lies mainly on sea life and underwater scenery,
+                although he also dabbles in landscapes and fantasy
+                illustrations. Art has been an essential part of AJ&apos;s life
+                since childhood, but he took it seriously during his university
+                years, teaching himself oil painting techniques and taking on
+                commissions whenever possible. Today, AJ continues to hone his
+                skills, always striving to improve.
               </Typography>
               <Typography mb={1}>
-                Below, you&apos;ll find a list of all my previous shows and
-                activities, but one of my proudest achievements is having a work
-                of mine, &quot;HIV in Plasma,&quot; included in the New York
-                State Museum&apos;s permanent collection. I work mainly with oil
-                colors, although I also enjoy using acrylics, watercolors,
-                charcoal, ink, and pencils. My art style can be characterized as
+                AJ mainly works with oil colors, but he also enjoys
+                experimenting with acrylics, watercolors, charcoal, ink, and
+                pencils. AJ&apos;s art style can be characterized as
                 representational realism.
               </Typography>
               <Typography mb={1}>
-                I hope my art brings you pleasure and joy, and I invite you to
-                contact me with any inquiries. For those interested in
-                additional content such as sketches, progress shots, creepy
-                selfies, and more, please visit my{" "}
+                Please enjoy the artwork presented here, and for additional
+                content such as sketches, progress shots, creepy selfies and
+                more, feel free to visit AJ&apos;s official{" "}
                 <LinkRouter
                   target="_blank"
                   to="https://web.facebook.com/JassarBrush"
