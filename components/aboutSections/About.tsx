@@ -42,7 +42,7 @@ export default function About() {
                   height: "100%",
                 }}
                 src={me}
-                alt="About Me"
+                alt="About"
               />
             </Box>
             <Box>
@@ -53,7 +53,7 @@ export default function About() {
                 textTransform="uppercase"
                 mb={1}
               >
-                About Me
+                About
               </Typography>
               <Typography mb={1}>
                 As an artist, Alhaitham Jassar (AKA AJ) finds inspiration and
@@ -97,7 +97,6 @@ export default function About() {
                 </LinkRouter>{" "}
                 accounts.
               </Typography>
-              <Typography mb={2}>- AJ</Typography>
             </Box>
           </Container>
         </Box>
