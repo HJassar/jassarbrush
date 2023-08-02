@@ -19,7 +19,7 @@ export default function Exhibs() {
             background: "#00000016",
           }}
         >
-          <Container sx={{ p: 2 }}>
+          <Container sx={{ p: 2, pt: 4 }}>
             <Typography
               variant="h5"
               component="h2"
