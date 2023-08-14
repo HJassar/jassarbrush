@@ -10,6 +10,7 @@ import LinkRouter from "../components/LinkRouter";
 
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import BouncingArrow from "../components/BouncingArrow";
 
 const bg = "/assets/home/wave_bg.jpg";
 const signature = "/assets/home/signature.png";
@@ -29,6 +30,7 @@ const Home: NextPage = () => {
         backgroundSize: "cover",
       }}
     >
+      <BouncingArrow />
       <div style={{ width: "60%", maxWidth: "849px" }}>
         <img src={signature} alt="AJ Signature" style={{ width: "100%" }} />
       </div>
