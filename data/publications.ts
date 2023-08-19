@@ -30,10 +30,10 @@ export default [
     sub: "By Ballistic Publishing",
     url: "https://www.amazon.com/Paul-Hellard/dp/1921828986/ref=sr_1_fkmr0_2?dchild=1&keywords=expose+10+ballestic+publishing&qid=1589217403&s=books&sr=1-2-fkmr0",
   },
-  {
-    cover: "hamster.png",
-    main: "Frankie Fiddlesticks,",
-    sub: "Where’s the Hamster?",
-    url: "https://www.amazon.com/Frankie-Fiddlesticks-Wheres-Hamster-Alhaitham/dp/0692589368",
-  },
+  // {
+  //   cover: "hamster.png",
+  //   main: "Frankie Fiddlesticks,",
+  //   sub: "Where’s the Hamster?",
+  //   url: "https://www.amazon.com/Frankie-Fiddlesticks-Wheres-Hamster-Alhaitham/dp/0692589368",
+  // },
 ];
