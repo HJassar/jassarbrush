@@ -7,6 +7,12 @@ export interface IExhibit {
 
 const exhibitions: IExhibit[] = [
   {
+    title:
+      "2023 David Shepherd Wildlife Foundation Wildlife Artist of the Year Exhibition, the Mall Galleries",
+    month: "September 2023",
+    city: "London, UK",
+  },
+  {
     title: "Solo Exhibition, Meadowridge Public Library.",
     month: "June - September 2023",
     city: "Madison, WI USA",
