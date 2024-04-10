@@ -44,6 +44,14 @@ const pages: any[] = [
     key="2"
     sx={linkProps}
     underline="none"
+    to="/gallery?category=murals"
+  >
+    Murals
+  </LinkRouter>,
+  <LinkRouter
+    key="2"
+    sx={linkProps}
+    underline="none"
     to="/gallery?category=illustrations"
   >
     Illustrations
