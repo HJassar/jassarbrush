@@ -7,8 +7,13 @@ export interface IExhibit {
 
 const exhibitions: IExhibit[] = [
   {
+    title: "Pancakes & Booze Art Show.",
+    month: "October 2024",
+    city: "Milwaukee, WI USA",
+  },
+  {
     title:
-      "2023 David Shepherd Wildlife Foundation Wildlife Artist of the Year Exhibition, the Mall Galleries",
+      "2023 David Shepherd Wildlife Foundation Wildlife Artist of the Year Exhibition, the Mall Galleries.",
     month: "September 2023",
     city: "London, UK",
   },
