@@ -71,7 +71,16 @@ const pages: any[] = [
     rel="noopener"
     to="https://displate.com/jassar?type=displates"
   >
-    Shop
+    Displate
+  </LinkRouter>,
+  <LinkRouter
+    key="4"
+    sx={linkProps}
+    target="_blank"
+    rel="noopener"
+    to="https://pixels.com/profiles/alhaitham-jassar/shop"
+  >
+    Merch
   </LinkRouter>,
   <LinkRouter key="5" sx={linkProps} underline="none" to="#contact">
     Contact
@@ -226,10 +235,11 @@ function FineArt() {
   }
   const items: IItem[] = [
     { label: "Water Worlds", slug: "water-worlds" },
+    { label: "Ocean Noir", slug: "ocean-noir" },
     { label: "Divers", slug: "divers" },
     { label: "Ships", slug: "ships" },
     { label: "Landscapes", slug: "landscapes" },
-    { label: "Ocean Noir", slug: "ocean-noir" },
+    { label: "Figurative", slug: "figurative" },
   ];
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
