@@ -8,7 +8,7 @@ export default function Synafy() {
     <Tooltip title="Made with ❤ by Synafy" placement="left" arrow>
       <IconButton>
         <LinkRouter
-          to="http://synafy.com"
+          to="https://www.facebook.com/Synafy"
           target="_blank"
           rel="noopener"
           sx={{ opacity: 0.3 }}
