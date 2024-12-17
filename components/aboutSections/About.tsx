@@ -66,25 +66,25 @@ export default function About() {
                   About
                 </Typography>
                 <Typography mb={1}>
-                  As an artist, Alhaitham Jassar (AKA AJ) finds inspiration and
-                  wonder in the natural world. From its delicate beauty to its
-                  intimidating mystery, AJ is drawn to the joy of capturing our
-                  natural heritage through works of art for others to relish.
+                  Alhaitham Jassar (AJ) finds endless inspiration in the natural
+                  world, captivated by its delicate beauty and profound mystery.
+                  Through his art, he seeks to celebrate and share the wonder of
+                  our natural heritage, creating pieces that others can admire
+                  and enjoy.
                 </Typography>
                 <Typography mb={1}>
-                  AJ&apos;s focus lies mainly on sea life and underwater
-                  scenery, although he also dabbles in landscapes and fantasy
-                  illustrations. Art has been an essential part of AJ&apos;s
-                  life since childhood, but he took it seriously during his
-                  university years, teaching himself oil painting techniques and
-                  taking on commissions whenever possible. Today, AJ continues
-                  to hone his skills, always striving to improve.
+                  AJ&apos;s artistic focus spans sea life, underwater scenes,
+                  landscapes, and imaginative fantasy illustrations. While art
+                  has been a lifelong passion, it was during his university
+                  years that he began to take it seriously, mastering oil
+                  painting techniques on his own and accepting commissions
+                  whenever possible.
                 </Typography>
                 <Typography mb={1}>
-                  AJ mainly works with oil colors, but he also enjoys
-                  experimenting with acrylics, watercolors, charcoal, ink, and
-                  pencils. AJ&apos;s art style can be characterized as
-                  representational realism.
+                  Primarily working with oil paints, AJ also enjoys
+                  experimenting with a variety of mediums, including acrylics,
+                  watercolors, charcoal, ink, and pencils. His art is best
+                  described as representational realism.
                 </Typography>
                 <Typography mb={1}>
                   Please enjoy the artwork presented here, and for additional
@@ -103,7 +103,7 @@ export default function About() {
                     to="https://www.instagram.com/jassar_brush/"
                     rel="noreferrer"
                   >
-                    Instagram.
+                    Instagram
                   </LinkRouter>{" "}
                   accounts.
                 </Typography>
