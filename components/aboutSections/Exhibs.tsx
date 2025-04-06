@@ -1,11 +1,45 @@
-import { Box, Container, Fade, ListItem, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Fade,
+  LinearProgress,
+  ListItem,
+  Typography,
+} from "@mui/material";
 import { useInView } from "react-intersection-observer";
 
 import LinkRouter from "../LinkRouter";
-import exhibitions, { IExhibit } from "../../data/exhibitions";
+import { IExhibit } from "../../data/exhibitions";
+import useData from "../../hooks/useData";
+import Layout from "../layout/Layout";
 
 export default function Exhibs() {
+  const { data: exhibitions, loading } = useData(
+    "exhibitions",
+    "all",
+    {},
+    false
+  );
+
+  console.clear();
+  console.log("exhibitions", exhibitions);
+
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
+
+  if (loading)
+    return (
+      <Layout>
+        <Container
+          sx={{
+            minHeight: "95vh",
+            pt: "80px",
+          }}
+        >
+          <LinearProgress />
+        </Container>
+      </Layout>
+    );
+
   return (
     <>
       <div ref={ref} />
@@ -29,28 +63,28 @@ export default function Exhibs() {
               Exhibitions
             </Typography>
             <ul>
-              {exhibitions.map((ex: IExhibit, index: number) => (
-                <li key={index} style={{ marginBottom: "1em" }}>
-                  {ex.title}
+              {exhibitions?.map((ex: {fields: IExhibit, id: any}) => (
+                <li key={ex.id} style={{ marginBottom: "1em" }}>
+                  {ex.fields.Title}
                   <br />
-                  {ex.url && (
+                  {ex.fields.URL && (
                     <>
                       <LinkRouter
                         to={
-                          ex.url.startsWith("http")
-                            ? ex.url
-                            : "https://" + ex.url
+                          ex.fields.URL.startsWith("http")
+                            ? ex.fields.URL
+                            : "https://" + ex.fields.URL
                         }
                         target="_blank"
                         rel="noreferrer"
                       >
-                        {ex.url}
+                        {ex.fields.URL}
                       </LinkRouter>
                       <br />
                     </>
                   )}
-                  {ex.month}
-                  {ex.city && ", " + ex.city}
+                  {new Date(ex.fields.Month).toLocaleString("en-US", { month: "long", year: "numeric" })}
+                  {ex.fields.City && ", " + ex.fields.City}
                 </li>
               ))}
             </ul>
