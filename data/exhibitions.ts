@@ -7,6 +7,11 @@ export interface IExhibit {
 
 const exhibitions: IExhibit[] = [
   {
+    title: "Healing Journey group show, Nadiana Art Gallery" ,
+    month: "April 2025",
+    city: "Milwaukee, WI USA",
+  },
+  {
     title: "Monochromatic  Art Exhibition, Nadiana Art Gallery",
     month: "December 2024",
     city: "Milwaukee, WI USA",
