@@ -1,21 +1,24 @@
 import { useState } from "react";
-import { TextField, Box } from "@mui/material";
+import { TextField, Box, Typography } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, set } from "react-hook-form";
 import frontFetch from "../lib/frontFetch";
 export default function ContactForm() {
   const { control, handleSubmit, formState } = useForm({
-    defaultValues: { name: "", email: "", message: "" },
+    defaultValues: { name: "", email: "", message: "", website: "" },
     mode: "onChange",
   });
   const { isDirty, isValid, errors } = formState;
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const onSubmit = async (data: any) => {
     setLoading(true);
     const response = await frontFetch("/api/contact", "POST", data);
-    if (response.data[0].createdTime) setSubmitted(true);
+    console.log("Response from contact form:", response);
+    if (response.data && response?.data[0].createdTime) setSubmitted(true);
+    if (response?.error) setError(response.error.message);
     setLoading(false);
   };
 
@@ -51,16 +54,38 @@ export default function ContactForm() {
         </Box>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            style={{ display: "none" }}
+            name="website"
+          />
           <Controller
             name="name"
             control={control}
-            rules={{ required: true }}
+            rules={{
+              required: true,
+              minLength: {
+                value: 2,
+                message: "Name must be at least 2 characters long",
+              },
+              maxLength: {
+                value: 30,
+                message: "Name cannot exceed 30 characters",
+              },
+              pattern: {
+                value: /^[a-zA-Z\s]+$/,
+                message: "Name can only contain letters and spaces",
+              },
+            }}
             render={({ field }) => (
               <TextField
                 {...field}
                 fullWidth
                 variant="filled"
                 label="Your Name"
+                autoComplete="name"
                 sx={{ mb: 2 }}
                 error={Boolean(errors.name)}
                 helperText={errors.name ? errors.name.message : ""}
@@ -75,6 +100,21 @@ export default function ContactForm() {
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                 message: "invalid email address",
+              },
+              validate: (value: string) => {
+                const popularEmailDomains = [
+                  "gmail.com",
+                  "yahoo.com",
+                  "hotmail.com",
+                  "outlook.com",
+                  "live.com",
+                  "icloud.com",
+                  "aol.com",
+                ];
+                const emailDomain = value.split("@")[1];
+                return popularEmailDomains.includes(emailDomain)
+                  ? true
+                  : "Please use a popular email domain like gmail.com, yahoo.com, etc.";
               },
             }}
             render={({ field }) => (
@@ -92,7 +132,13 @@ export default function ContactForm() {
           <Controller
             name="message"
             control={control}
-            rules={{ required: true }}
+            rules={{
+              required: true,
+              minLength: {
+                value: 30,
+                message: "Message must be at least 30 characters long",
+              },
+            }}
             render={({ field }) => (
               <TextField
                 {...field}
@@ -107,6 +153,9 @@ export default function ContactForm() {
               />
             )}
           />
+          <Typography color="error" sx={{ mb: 2, fontSize: 14 }}>
+            {error && !isDirty ? <>{error}</> : <></>}
+          </Typography>
           <LoadingButton
             fullWidth
             variant="contained"
