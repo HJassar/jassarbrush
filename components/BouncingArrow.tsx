@@ -31,6 +31,7 @@ const BouncingArrow: React.FC = () => {
       setIsVisible(scrollPosition < 100);
     };
 
+    handleScroll(); // Initial check
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);

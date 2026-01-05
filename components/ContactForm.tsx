@@ -31,7 +31,8 @@ export default function ContactForm() {
         mr: { xs: 0, sm: 5 },
         p: 3,
         borderRadius: 5,
-        background: "#FFFFFF",
+        background: "#000000",
+        border: "1px solid rgba(255,255,255,0.1)",
       }}
     >
       {submitted ? (
@@ -42,7 +43,7 @@ export default function ContactForm() {
             alignItems: "center",
             justifyContent: "center",
             height: "100%",
-            color: "#000000",
+            color: "white",
           }}
         >
           <Box sx={{ fontSize: 24, fontWeight: 600, mb: 2 }}>
@@ -86,7 +87,28 @@ export default function ContactForm() {
                 variant="filled"
                 label="Your Name"
                 autoComplete="name"
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 2,
+                  "& .MuiFilledInput-root": {
+                    backgroundColor: "rgba(255,255,255,0.05)",
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                    },
+                    "&.Mui-focused": {
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                    },
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "rgba(255,255,255,0.6)",
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "white",
+                  },
+                  "& .MuiFormHelperText-root": {
+                    color: "#ff6b6b",
+                  },
+                }}
                 error={Boolean(errors.name)}
                 helperText={errors.name ? errors.name.message : ""}
               />
@@ -123,7 +145,28 @@ export default function ContactForm() {
                 fullWidth
                 variant="filled"
                 label="Your Email"
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 2,
+                  "& .MuiFilledInput-root": {
+                    backgroundColor: "rgba(255,255,255,0.05)",
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                    },
+                    "&.Mui-focused": {
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                    },
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "rgba(255,255,255,0.6)",
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "white",
+                  },
+                  "& .MuiFormHelperText-root": {
+                    color: "#ff6b6b",
+                  },
+                }}
                 error={Boolean(errors.email)}
                 helperText={errors.email ? errors.email.message : ""}
               />
@@ -147,13 +190,34 @@ export default function ContactForm() {
                 variant="filled"
                 multiline
                 rows={4}
-                sx={{ mb: 2 }}
+                sx={{
+                  mb: 2,
+                  "& .MuiFilledInput-root": {
+                    backgroundColor: "rgba(255,255,255,0.05)",
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                    },
+                    "&.Mui-focused": {
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                    },
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "rgba(255,255,255,0.6)",
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "white",
+                  },
+                  "& .MuiFormHelperText-root": {
+                    color: "#ff6b6b",
+                  },
+                }}
                 error={Boolean(errors.message)}
                 helperText={errors.message ? errors.message.message : ""}
               />
             )}
           />
-          <Typography color="error" sx={{ mb: 2, fontSize: 14 }}>
+          <Typography color="error" sx={{ mb: 2, fontSize: 14, color: "#ff6b6b" }}>
             {error && !isDirty ? <>{error}</> : <></>}
           </Typography>
           <LoadingButton
@@ -162,6 +226,18 @@ export default function ContactForm() {
             type="submit"
             disabled={!isDirty || !isValid}
             loading={loading}
+            sx={{
+              backgroundColor: "rgba(255,255,255,0.1)",
+              color: "white",
+              border: "1px solid rgba(255,255,255,0.2)",
+              "&:hover": {
+                backgroundColor: "rgba(255,255,255,0.2)",
+              },
+              "&.Mui-disabled": {
+                backgroundColor: "rgba(255,255,255,0.05)",
+                color: "rgba(255,255,255,0.3)",
+              },
+            }}
           >
             Submit
           </LoadingButton>

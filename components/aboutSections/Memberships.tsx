@@ -1,11 +1,21 @@
 import { Box, Container, Fade, Typography } from "@mui/material";
 
 import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react";
 
 import memberships from "../../data/memberships";
 
 export default function Memberships() {
+  const [mounted, setMounted] = useState(false);
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Only show fade animation after mount to avoid hydration mismatch
+  const shouldAnimate = mounted && inView;
+
   return (
     <Box
       sx={{
@@ -14,7 +24,7 @@ export default function Memberships() {
     >
       <div ref={ref} />
       <Fade
-        in={inView}
+        in={shouldAnimate}
         mountOnEnter={true}
         timeout={{ enter: 1000, exit: 100 }}
       >
@@ -25,7 +35,7 @@ export default function Memberships() {
             mb={4}
             textTransform="uppercase"
           >
-            Memberships &amp; Associations
+            Memberships & Associations
           </Typography>
           <ul>
             {memberships.map((m: string, index: number) => (

@@ -7,6 +7,18 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Disable transitions during hydration to prevent mismatches */
+* {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Re-enable transitions after hydration */
+.hydrated * {
+  transition: initial !important;
+  animation: initial !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;

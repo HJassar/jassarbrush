@@ -59,7 +59,7 @@ export default function ImageGallery({ category }: { category: string }) {
   const handleMovePrev = () => setIndex(prevIndex);
   const handleMoveNext = () => setIndex(nextIndex);
 
-  // Load the photos
+  // Load the photos - only fetch after component is mounted on client
   const { data, loading } = useData(
     "images",
     "all",
@@ -75,7 +75,7 @@ export default function ImageGallery({ category }: { category: string }) {
   // Handle loading and errors
   if (loading) return <LinearProgress />;
   if (images.length === 0)
-    return <div>No images found for the selected category</div>;
+    return <div suppressHydrationWarning>No images found for the selected category</div>;
 
   // Handle the gallery
   return (

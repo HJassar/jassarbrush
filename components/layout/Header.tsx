@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { LBContext } from "../../LBContext";
 
 import {
@@ -49,7 +49,7 @@ const pages: any[] = [
     Murals
   </LinkRouter>,
   <LinkRouter
-    key="2"
+    key="3"
     sx={linkProps}
     underline="none"
     to="/gallery?category=illustrations"
@@ -57,7 +57,7 @@ const pages: any[] = [
     Illustrations
   </LinkRouter>,
   <LinkRouter
-    key="3"
+    key="4"
     sx={linkProps}
     underline="none"
     to="/gallery?category=caricatures"
@@ -65,7 +65,7 @@ const pages: any[] = [
     Caricatures
   </LinkRouter>,
   <LinkRouter
-    key="4"
+    key="5"
     sx={linkProps}
     target="_blank"
     rel="noopener"
@@ -74,7 +74,7 @@ const pages: any[] = [
     Displate
   </LinkRouter>,
   <LinkRouter
-    key="4"
+    key="6"
     sx={linkProps}
     target="_blank"
     rel="noopener"
@@ -82,7 +82,7 @@ const pages: any[] = [
   >
     Merch
   </LinkRouter>,
-  <LinkRouter key="5" sx={linkProps} underline="none" to="#contact">
+  <LinkRouter key="7" sx={linkProps} underline="none" to="#contact">
     Contact
   </LinkRouter>,
 ];
@@ -98,7 +98,16 @@ export default function Header() {
     setAnchorElNav(null);
   };
 
-  const trigger = useScrollTrigger({ threshold: 100 });
+  const [trigger, setTrigger] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setTrigger(window.scrollY > 100);
+    };
+    handleScroll(); // Initial check
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const socialLinks = (
     <Box display="flex" alignItems="center" ml={2}>
@@ -182,8 +191,8 @@ export default function Header() {
                   "display": { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem sx={{ color: "white" }} key={page}>
+                {pages.map((page, index) => (
+                  <MenuItem sx={{ color: "white" }} key={index}>
                     {page}
                   </MenuItem>
                 ))}
@@ -214,8 +223,8 @@ export default function Header() {
                 justifyContent: "end",
               }}
             >
-              {pages.map((page) => (
-                <Box key={page} ml={1}>
+              {pages.map((page, index) => (
+                <Box key={index} ml={1}>
                   {page}
                 </Box>
               ))}
@@ -270,15 +279,14 @@ function FineArt() {
         open={Boolean(anchorEl)}
         onClose={handleCloseNavMenu}
       >
-        {items.map((item: IItem, index: number) => (
+        {items.map((item: IItem) => (
           <LinkRouter
-            key={index}
+            key={item.slug}
             underline="none"
             to={"/gallery?category=" + item.slug}
             sx={{ color: "white" }}
           >
-            <MenuItem key={item.slug}>{item.label}</MenuItem>
-            {index < items.length - 1 && <Divider />}
+            <MenuItem>{item.label}</MenuItem>
           </LinkRouter>
         ))}
       </Menu>

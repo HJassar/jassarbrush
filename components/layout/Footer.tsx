@@ -4,12 +4,17 @@ import {
   Instagram as InstagramIcon,
 } from "@mui/icons-material";
 import { Box, Container } from "@mui/material";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ContactForm from "../ContactForm";
 import LinkRouter from "../LinkRouter";
-import Synafy from "../Synafy";
 
 export default function Footer() {
+  const [year, setYear] = useState<number>(0);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <Box sx={{ color: "white", background: "#000000" }}>
       <Container
@@ -91,11 +96,8 @@ export default function Footer() {
               p: 2,
             }}
           >
-            All artwork &#169; {new Date().getFullYear()} Alhaitham Jassar
+            All artwork &#169; {year > 0 ? year : new Date().getFullYear()} Alhaitham Jassar
           </Container>
-          <Box pr={3} py={1}>
-            <Synafy />
-          </Box>
         </Box>
       </Box>
     </Box>

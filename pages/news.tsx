@@ -10,6 +10,8 @@ import {
 
 import type { NextPage } from "next";
 
+import { useState, useEffect } from "react";
+
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 
@@ -19,8 +21,18 @@ import LinkRouter from "../components/LinkRouter";
 
 dayjs.extend(customParseFormat);
 
+function formatNewsDate(dateStr: string, mounted: boolean): string {
+  if (!mounted) return "";
+  return dayjs(dateStr).format("MMM YYYY");
+}
+
 const News: NextPage = () => {
+  const [mounted, setMounted] = useState(false);
   const { data, loading } = useData("news", "all", {}, false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (loading)
     return (
@@ -88,7 +100,7 @@ const News: NextPage = () => {
                       color="text.secondary"
                       component="div"
                     >
-                      {dayjs(item.fields.Date).format("MMM YYYY")}
+                      {formatNewsDate(item.fields.Date, mounted)}
                     </Typography>
                     <Typography component="p" variant="body1">
                       {item.fields.Excerpt}

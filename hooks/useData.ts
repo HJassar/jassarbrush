@@ -8,7 +8,7 @@ import useToken from "./useToken";
 import { IError } from "../interfaces/error.interface";
 
 export default function useData(
-  dataType: "images" | "news" | "exhibitions",
+  dataType: "images" | "news" | "exhibitions" | "about",
   id: string | undefined,
   queryOptions: object = {},
   isPrivate: boolean = true,

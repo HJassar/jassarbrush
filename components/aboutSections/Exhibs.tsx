@@ -1,30 +1,35 @@
 import {
   Box,
   Container,
-  Fade,
   LinearProgress,
-  ListItem,
   Typography,
 } from "@mui/material";
-import { useInView } from "react-intersection-observer";
+import ReactMarkdown from 'react-markdown';
 
-import LinkRouter from "../LinkRouter";
-import { IExhibit } from "../../data/exhibitions";
 import useData from "../../hooks/useData";
 import Layout from "../layout/Layout";
+import { IAboutItem, IAboutCategory } from "../../data/about";
+
+function groupByCategory(
+  items: { fields: IAboutItem; id: any }[]
+): IAboutCategory[] {
+  const categoryMap = new Map<string, string[]>();
+
+  items.forEach((item) => {
+    const category = item.fields.Group || "Uncategorized";
+    const existing = categoryMap.get(category) || [];
+    existing.push(item.fields.Text);
+    categoryMap.set(category, existing);
+  });
+
+  return Array.from(categoryMap.entries()).map(([category, list]) => ({
+    category,
+    list,
+  }));
+}
 
 export default function Exhibs() {
-  const { data: exhibitions, loading } = useData(
-    "exhibitions",
-    "all",
-    {},
-    false
-  );
-
-  console.clear();
-  console.log("exhibitions", exhibitions);
-
-  const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
+  const { data: aboutData, loading } = useData("about", "all", {}, false);
 
   if (loading)
     return (
@@ -40,57 +45,37 @@ export default function Exhibs() {
       </Layout>
     );
 
+  const categories = aboutData ? groupByCategory(aboutData) : [];
+
   return (
-    <>
-      <div ref={ref} />
-      <Fade
-        in={inView}
-        mountOnEnter={true}
-        timeout={{ enter: 1000, exit: 100 }}
-      >
-        <Box
-          sx={{
-            background: "#00000016",
-          }}
-        >
-          <Container sx={{ p: 2, pt: 4 }}>
+    <Box
+      sx={{
+        background: "#00000016",
+        opacity: 1,
+        transition: "opacity 1s ease-in-out",
+      }}
+    >
+      <Container sx={{ p: 2, pt: 4 }}>
+        {categories.map((cat: IAboutCategory, catIndex: number) => (
+          <Box key={catIndex} mb={4}>
             <Typography
               variant="h5"
               component="h2"
-              mb={4}
+              mb={3}
               textTransform="uppercase"
             >
-              Exhibitions
+              {cat.category}
             </Typography>
-            <ul>
-              {exhibitions?.map((ex: {fields: IExhibit, id: any}) => (
-                <li key={ex.id} style={{ marginBottom: "1em" }}>
-                  {ex.fields.Title}
-                  <br />
-                  {ex.fields.URL && (
-                    <>
-                      <LinkRouter
-                        to={
-                          ex.fields.URL.startsWith("http")
-                            ? ex.fields.URL
-                            : "https://" + ex.fields.URL
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {ex.fields.URL}
-                      </LinkRouter>
-                      <br />
-                    </>
-                  )}
-                  {new Date(ex.fields.Month).toLocaleString("en-US", { month: "long", year: "numeric" })}
-                  {ex.fields.City && ", " + ex.fields.City}
+            <ul style={{ margin: 0, paddingLeft: 20 }}>
+              {cat.list.map((item: string, itemIndex: number) => (
+                <li key={itemIndex} style={{ marginBottom: '0.5rem' }}>
+                  <ReactMarkdown>{item}</ReactMarkdown>
                 </li>
               ))}
             </ul>
-          </Container>
-        </Box>
-      </Fade>
-    </>
+          </Box>
+        ))}
+      </Container>
+    </Box>
   );
 }

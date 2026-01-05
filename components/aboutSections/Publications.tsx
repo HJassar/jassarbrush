@@ -16,6 +16,7 @@ import publications, { IPublication } from "../../data/publications";
 
 export default function Publications() {
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
+
   return (
     <Box
       sx={{
@@ -40,7 +41,7 @@ export default function Publications() {
           mb={4}
           sx={{ color: "white", textTransform: "uppercase" }}
         >
-          Publications That Include AJ&apos;s Work
+          Publications That Include AJ's Work
         </Typography>
         <div ref={ref} />
         <Grid container gap={1}>
@@ -51,7 +52,8 @@ export default function Publications() {
               timeout={{ enter: 1000, exit: 100 }}
               key={index}
             >
-              <Grid item xs={12} md={(12 - 0.5) / publications.length}>
+              <>
+                <Grid item xs={12} md={(12 - 0.5) / publications.length}>
                 <LinkRouter
                   target="_blank"
                   rel="noreferrer"
@@ -74,7 +76,8 @@ export default function Publications() {
                     {pub.sub}
                   </CardContent>
                 </LinkRouter>
-              </Grid>
+                </Grid>
+              </>
             </Fade>
           ))}
         </Grid>

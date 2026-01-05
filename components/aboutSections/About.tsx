@@ -73,7 +73,7 @@ export default function About() {
                   and enjoy.
                 </Typography>
                 <Typography mb={1}>
-                  AJ&apos;s artistic focus spans sea life, underwater scenes,
+                  AJ's artistic focus spans sea life, underwater scenes,
                   landscapes, and imaginative fantasy illustrations. While art
                   has been a lifelong passion, it was during his university
                   years that he began to take it seriously, mastering oil
@@ -89,7 +89,7 @@ export default function About() {
                 <Typography mb={1}>
                   Please enjoy the artwork presented here, and for additional
                   content such as sketches, progress shots, creepy selfies and
-                  more, feel free to visit AJ&apos;s official{" "}
+                  more, feel free to visit AJ's official{" "}
                   <LinkRouter
                     target="_blank"
                     to="https://web.facebook.com/JassarBrush"
@@ -100,7 +100,7 @@ export default function About() {
                   and{" "}
                   <LinkRouter
                     target="_blank"
-                    to="https://www.instagram.com/jassar_brush/"
+                    to="https://web.instagram.com/jassar_brush/"
                     rel="noreferrer"
                   >
                     Instagram
