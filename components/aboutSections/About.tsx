@@ -1,11 +1,33 @@
-import { Box, Container, Slide, Typography } from "@mui/material";
+import { Box, Container, Link, Slide, Typography } from "@mui/material";
 import { useInView } from "react-intersection-observer";
+import ReactMarkdown from "react-markdown";
 import LinkRouter from "../LinkRouter";
 
 const me = "/assets/home/me.jpg";
 
 export default function About() {
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
+
+  const bioPara1 = `Alhaitham Jassar (AJ) finds endless inspiration in the natural world, captivated by its delicate beauty and profound mystery. Through his art, he seeks to celebrate and share the wonder of our natural heritage, creating pieces that others can admire and enjoy.`;
+
+  const bioPara2 = `AJ's artistic focus spans sea life, underwater scenes, landscapes, and imaginative fantasy illustrations. While art has been a lifelong passion, it was during his university years that he began to take it seriously, mastering oil painting techniques on his own and accepting commissions whenever possible.`;
+
+  const bioPara3 = `Primarily working with oil paints, AJ also enjoys experimenting with a variety of mediums, including acrylics, watercolors, charcoal, ink, and pencils. His art is best described as representational realism.`;
+
+  const bioPara4 = `Please enjoy the artwork presented here, and for additional content such as sketches, progress shots, creepy selfies and more, feel free to visit AJ's official [Facebook](https://web.facebook.com/JassarBrush) and [Instagram](https://web.instagram.com/jassar_brush/) accounts.`;
+
+  const markdownComponents = {
+    p: ({ children }: any) => (
+      <Typography mb={1} sx={{ color: "white", whiteSpace: "pre-wrap" }}>
+        {children}
+      </Typography>
+    ),
+    a: ({ node, ...props }: any) => (
+      <LinkRouter target="_blank" to={props.href} rel="noreferrer">
+        {props.children}
+      </LinkRouter>
+    ),
+  };
 
   return (
     <div ref={ref} id="about" style={{ background: "black", color: "white" }}>
@@ -65,48 +87,18 @@ export default function About() {
                 >
                   About
                 </Typography>
-                <Typography mb={1}>
-                  Alhaitham Jassar (AJ) finds endless inspiration in the natural
-                  world, captivated by its delicate beauty and profound mystery.
-                  Through his art, he seeks to celebrate and share the wonder of
-                  our natural heritage, creating pieces that others can admire
-                  and enjoy.
-                </Typography>
-                <Typography mb={1}>
-                  AJ&apos;s artistic focus spans sea life, underwater scenes,
-                  landscapes, and imaginative fantasy illustrations. While art
-                  has been a lifelong passion, it was during his university
-                  years that he began to take it seriously, mastering oil
-                  painting techniques on his own and accepting commissions
-                  whenever possible.
-                </Typography>
-                <Typography mb={1}>
-                  Primarily working with oil paints, AJ also enjoys
-                  experimenting with a variety of mediums, including acrylics,
-                  watercolors, charcoal, ink, and pencils. His art is best
-                  described as representational realism.
-                </Typography>
-                <Typography mb={1}>
-                  Please enjoy the artwork presented here, and for additional
-                  content such as sketches, progress shots, creepy selfies and
-                  more, feel free to visit AJ&apos;s official{" "}
-                  <LinkRouter
-                    target="_blank"
-                    to="https://web.facebook.com/JassarBrush"
-                    rel="noreferrer"
-                  >
-                    Facebook
-                  </LinkRouter>{" "}
-                  and{" "}
-                  <LinkRouter
-                    target="_blank"
-                    to="https://web.instagram.com/jassar_brush/"
-                    rel="noreferrer"
-                  >
-                    Instagram
-                  </LinkRouter>{" "}
-                  accounts.
-                </Typography>
+                <ReactMarkdown components={markdownComponents}>
+                  {bioPara1}
+                </ReactMarkdown>
+                <ReactMarkdown components={markdownComponents}>
+                  {bioPara2}
+                </ReactMarkdown>
+                <ReactMarkdown components={markdownComponents}>
+                  {bioPara3}
+                </ReactMarkdown>
+                <ReactMarkdown components={markdownComponents}>
+                  {bioPara4}
+                </ReactMarkdown>
               </Box>
             </Box>
           </Container>

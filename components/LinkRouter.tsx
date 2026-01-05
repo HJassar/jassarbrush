@@ -10,7 +10,7 @@ export default function LinkRouter(props: LinkRouterProps) {
   const { to, replace, children, sx, ...rest } = props;
   if (to)
     return (
-      <NextLink href={to} replace={replace}>
+      <NextLink href={to} replace={replace} legacyBehavior passHref>
         <Link
           component="a"
           underline="none"

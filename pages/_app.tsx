@@ -12,12 +12,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div suppressHydrationWarning>
-      <LBProvider>
-        <Component {...pageProps} />
-        <Analytics />
-      </LBProvider>
-    </div>
+    <LBProvider>
+      <Component {...pageProps} />
+      <Analytics />
+    </LBProvider>
   );
 }
 

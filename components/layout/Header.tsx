@@ -280,14 +280,19 @@ function FineArt() {
         onClose={handleCloseNavMenu}
       >
         {items.map((item: IItem) => (
-          <LinkRouter
+          <MenuItem
             key={item.slug}
-            underline="none"
-            to={"/gallery?category=" + item.slug}
-            sx={{ color: "white" }}
+            onClick={handleCloseNavMenu}
+            sx={{ p: 0 }}
           >
-            <MenuItem>{item.label}</MenuItem>
-          </LinkRouter>
+            <LinkRouter
+              underline="none"
+              to={"/gallery?category=" + item.slug}
+              sx={{ color: "white", width: "100%", p: "6px 16px" }}
+            >
+              {item.label}
+            </LinkRouter>
+          </MenuItem>
         ))}
       </Menu>
     </Box>

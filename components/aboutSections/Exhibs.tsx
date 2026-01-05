@@ -8,6 +8,7 @@ import ReactMarkdown from 'react-markdown';
 
 import useData from "../../hooks/useData";
 import Layout from "../layout/Layout";
+import LinkRouter from "../LinkRouter";
 import { IAboutItem, IAboutCategory } from "../../data/about";
 
 function groupByCategory(
@@ -69,7 +70,26 @@ export default function Exhibs() {
             <ul style={{ margin: 0, paddingLeft: 20 }}>
               {cat.list.map((item: string, itemIndex: number) => (
                 <li key={itemIndex} style={{ marginBottom: '0.5rem' }}>
-                  <ReactMarkdown>{item}</ReactMarkdown>
+                  <ReactMarkdown
+                    components={{
+                      p: ({ children }) => (
+                        <span style={{ whiteSpace: "pre-wrap" }}>
+                          {children}
+                        </span>
+                      ),
+                      a: ({ node, ...props }: any) => (
+                        <LinkRouter
+                          target="_blank"
+                          to={props.href}
+                          rel="noreferrer"
+                        >
+                          {props.children}
+                        </LinkRouter>
+                      ),
+                    }}
+                  >
+                    {item}
+                  </ReactMarkdown>
                 </li>
               ))}
             </ul>

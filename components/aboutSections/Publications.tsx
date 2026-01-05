@@ -52,32 +52,30 @@ export default function Publications() {
               timeout={{ enter: 1000, exit: 100 }}
               key={index}
             >
-              <>
-                <Grid item xs={12} md={(12 - 0.5) / publications.length}>
-                  <LinkRouter
-                    target="_blank"
-                    rel="noreferrer"
-                    to={pub.url}
-                    sx={{ color: "white" }}
-                  >
-                    <CardMedia
-                      component="img"
-                      height="120"
-                      sx={{
-                        objectFit: "contain",
-                        mt: { sm: 0, md: 1 },
-                      }}
-                      image={"/assets/home/publications/" + pub.cover}
-                      alt={pub.main}
-                    />
-                    <CardContent sx={{ textAlign: "center" }}>
-                      <strong>{pub.main}</strong>
-                      <br />
-                      {pub.sub}
-                    </CardContent>
-                  </LinkRouter>
-                </Grid>
-              </>
+              <Grid item xs={12} md={(12 - 0.5) / publications.length}>
+                <LinkRouter
+                  target="_blank"
+                  rel="noreferrer"
+                  to={pub.url}
+                  sx={{ color: "white" }}
+                >
+                  <CardMedia
+                    component="img"
+                    height="120"
+                    sx={{
+                      objectFit: "contain",
+                      mt: { sm: 0, md: 1 },
+                    }}
+                    image={"/assets/home/publications/" + pub.cover}
+                    alt={pub.main}
+                  />
+                  <CardContent sx={{ textAlign: "center" }}>
+                    <strong>{pub.main}</strong>
+                    <br />
+                    {pub.sub}
+                  </CardContent>
+                </LinkRouter>
+              </Grid>
             </Fade>
           ))}
         </Grid>
