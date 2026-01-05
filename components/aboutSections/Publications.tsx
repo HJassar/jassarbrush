@@ -41,7 +41,7 @@ export default function Publications() {
           mb={4}
           sx={{ color: "white", textTransform: "uppercase" }}
         >
-          Publications That Include AJ's Work
+          Publications That Include AJ&apos;s Work
         </Typography>
         <div ref={ref} />
         <Grid container gap={1}>
@@ -54,28 +54,28 @@ export default function Publications() {
             >
               <>
                 <Grid item xs={12} md={(12 - 0.5) / publications.length}>
-                <LinkRouter
-                  target="_blank"
-                  rel="noreferrer"
-                  to={pub.url}
-                  sx={{ color: "white" }}
-                >
-                  <CardMedia
-                    component="img"
-                    height="120"
-                    sx={{
-                      objectFit: "contain",
-                      mt: { sm: 0, md: 1 },
-                    }}
-                    image={"/assets/home/publications/" + pub.cover}
-                    alt={pub.main}
-                  />
-                  <CardContent sx={{ textAlign: "center" }}>
-                    <strong>{pub.main}</strong>
-                    <br />
-                    {pub.sub}
-                  </CardContent>
-                </LinkRouter>
+                  <LinkRouter
+                    target="_blank"
+                    rel="noreferrer"
+                    to={pub.url}
+                    sx={{ color: "white" }}
+                  >
+                    <CardMedia
+                      component="img"
+                      height="120"
+                      sx={{
+                        objectFit: "contain",
+                        mt: { sm: 0, md: 1 },
+                      }}
+                      image={"/assets/home/publications/" + pub.cover}
+                      alt={pub.main}
+                    />
+                    <CardContent sx={{ textAlign: "center" }}>
+                      <strong>{pub.main}</strong>
+                      <br />
+                      {pub.sub}
+                    </CardContent>
+                  </LinkRouter>
                 </Grid>
               </>
             </Fade>
